@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="protokit" verbose="1">
+	<test name="merger">
+		<classes>
+			<class name="com.jash.protokit.merger.ProtoSimplifierTest" />
+		</classes>
+	</test>
+</suite>
