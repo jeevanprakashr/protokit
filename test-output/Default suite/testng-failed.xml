@@ -5,7 +5,7 @@
     <classes>
       <class name="com.jash.protokit.merger.ProtoMergerTest">
         <methods>
-          <include name="testMerger" invocation-numbers="5"/>
+          <include name="testMerger" invocation-numbers="8"/>
         </methods>
       </class> <!-- com.jash.protokit.merger.ProtoMergerTest -->
     </classes>

@@ -137,8 +137,13 @@ public class ProtoComparer {
 		if (options.shouldOrderRepeatedMsg(field.getFullName())) {
 			List<?> intersection = new ArrayList<>(l1);
 			intersection.retainAll(l2);
-			l1.removeAll(intersection);
-			l2.removeAll(intersection);
+			for (Object val : intersection) {
+				if (!l1.contains(val) || !l2.contains(val)) {
+					continue;
+				}
+				l1.remove(val);
+				l2.remove(val);
+			}
 			if (field.getJavaType() == JavaType.MESSAGE) {
 				String orderByField = options.getOrderByFieldForRepeatedMsg(field.getFullName());
 				if (orderByField == null) {
@@ -190,6 +195,9 @@ public class ProtoComparer {
 					}
 					l1 = Arrays.asList(orderedl1);
 					l2 = Arrays.asList(orderedl2);
+				} else {
+					throw new IllegalArgumentException("Mapped values are not unique for repeated message field: "
+							+ field.getFullName() + " - " + orderByField);
 				}
 			}
 			if (Objects.equals(l1, l2)) {

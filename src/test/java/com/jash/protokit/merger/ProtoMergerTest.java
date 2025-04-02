@@ -20,10 +20,10 @@ public class ProtoMergerTest {
 
 	public Object[] getMergeMissingFieldsCase() {
 		Object[] data = new Object[5];
-		Book message1 = Book.newBuilder().setBookId(1).setStatus(BookStatus.AVAILABLE).build();
+		Book message1 = Book.newBuilder().setBookId(1).setStatus(BookStatus.BORROWED).build();
 		Book message2 = Book.newBuilder().setName("Book name").setAuthor("Author name").setGenre("Genre name").build();
 		Book expected = Book.newBuilder().setBookId(1).setName("Book name").setAuthor("Author name")
-				.setGenre("Genre name").setStatus(BookStatus.AVAILABLE).build();
+				.setGenre("Genre name").setStatus(BookStatus.BORROWED).build();
 		data[0] = message1;
 		data[1] = message2;
 		data[2] = null;
@@ -104,6 +104,30 @@ public class ProtoMergerTest {
 		return data;
 	}
 
+	public Object[] getMergeRepeatedByFieldCase() {
+		Object[] data = new Object[5];
+		Book book1 = Book.newBuilder().setBookId(1).setName("Book name").setAuthor("Author name").build();
+		Book book2 = Book.newBuilder().setBookId(1).setGenre("Genre name").setStatus(BookStatus.BORROWED).build();
+		Book book3 = Book.newBuilder().setBookId(2).setName("Book name 2").setAuthor("Author name 2")
+				.setGenre("Genre name 2").setStatus(BookStatus.AVAILABLE).build();
+		Book book4 = Book.newBuilder().setBookId(3).setName("Book name 3").setAuthor("Author name 3")
+				.setGenre("Genre name 3").setStatus(BookStatus.BORROWED).build();
+		Book book5 = Book.newBuilder().setBookId(1).setName("Book name").setAuthor("Author name").setGenre("Genre name")
+				.setStatus(BookStatus.BORROWED).build();
+		Member message1 = Member.newBuilder().addBorrowHistory(book3).addBorrowHistory(book1).build();
+		Member message2 = Member.newBuilder().addBorrowHistory(book2).addBorrowHistory(book4).build();
+		Member expected = Member.newBuilder().addBorrowHistory(book5).addBorrowHistory(book3).addBorrowHistory(book4)
+				.build();
+		MergeOptions options = MergeOptions.Builder.newBuilder()
+				.setMergeRepeatedByField("Member.borrowHistory", "Book.bookId").build();
+		data[0] = message1;
+		data[1] = message2;
+		data[2] = options;
+		data[3] = expected;
+		data[4] = expected;
+		return data;
+	}
+
 	@DataProvider(name = "dataProvider")
 	public Object[][] dataProvider() {
 		List<Object[]> data = new ArrayList<>();
@@ -113,6 +137,7 @@ public class ProtoMergerTest {
 		}
 		data.add(getExcludeFieldCase());
 		data.add(getPrimitiveRepeatedCase());
+		data.add(getMergeRepeatedByFieldCase());
 		return data.toArray(new Object[data.size()][]);
 	}
 
@@ -120,8 +145,8 @@ public class ProtoMergerTest {
 	public void testMerger(Message message1, Message message2, MergeOptions options, Message expected1,
 			Message expected2) {
 		Result result = ProtoMerger.merge(message1, message2, options);
-		assertEquals(expected1, result.getFirst());
-		assertEquals(expected2, result.getSecond());
+		assertEquals(result.getFirst(), expected1);
+		assertEquals(result.getSecond(), expected2);
 	}
 
 }

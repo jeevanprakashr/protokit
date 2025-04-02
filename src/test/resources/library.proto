@@ -20,8 +20,8 @@ message AddressOld {
 }
 
 enum BookStatus {
-	BORROWED = 0;
-	AVAILABLE = 1;
+	AVAILABLE = 0;
+	BORROWED = 1;
 }
 
 enum MemberPlan {

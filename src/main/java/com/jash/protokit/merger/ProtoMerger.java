@@ -124,6 +124,9 @@ public class ProtoMerger {
 					Object obj = intersection.remove(0);
 					int idx1 = mappedl1.indexOf(obj);
 					int idx2 = mappedl2.indexOf(obj);
+					if (idx1 == -1 || idx2 == -1) {
+						continue;
+					}
 					l1.add(templ1.remove(idx1));
 					l2.add(templ2.remove(idx2));
 					mappedl1.remove(idx1);
@@ -149,8 +152,13 @@ public class ProtoMerger {
 				intersection.retainAll(l2);
 				List<Object> l1WoIntersection = new ArrayList<>(l1);
 				List<Object> l2WoIntersection = new ArrayList<>(l2);
-				l1WoIntersection.removeAll(intersection);
-				l2WoIntersection.removeAll(intersection);
+				for (Object obj : intersection) {
+					if (!l1WoIntersection.contains(obj) || !l2WoIntersection.contains(obj)) {
+						continue;
+					}
+					l1WoIntersection.remove(obj);
+					l2WoIntersection.remove(obj);
+				}
 				l1.addAll(l2WoIntersection);
 				l2.addAll(l1WoIntersection);
 				alphaBuilder.setField(field, l1);

@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>8/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>9/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Apr 01 12:14:19 IST 2025</td>
+<td>Started on:</td><td>Wed Apr 02 12:38:06 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (366 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (365 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,25 +76,29 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: bookId: 1
-status: AVAILABLE
-, name: "Book name"
-author: "Author name"
-genre: "Genre name"
-, null, bookId: 1
-name: "Book name"
-author: "Author name"
-genre: "Genre name"
-status: AVAILABLE
-, bookId: 1
-name: "Book name"
-author: "Author name"
-genre: "Genre name"
-status: AVAILABLE
+<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: memberId: 1
+booksOnHold: 5
+, memberId: 1
+booksOnHold: 10
+, MergeOptions [primitiveConflictResolver={Member.booksOnHold=DEFAULT}, mergeRepeatedByField={}, excludeFields=[]], memberId: 1
+, memberId: 1
 </td>
 <td></td>
 <td>0</td>
-<td>com.jash.protokit.merger.ProtoMergerTest@750e2b97</td></tr>
+<td>com.jash.protokit.merger.ProtoMergerTest@3e27aa33</td></tr>
+<tr>
+<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: memberId: 1
+booksOnHold: 5
+, memberId: 1
+booksOnHold: 10
+, MergeOptions [primitiveConflictResolver={Member.booksOnHold=SECOND}, mergeRepeatedByField={}, excludeFields=[]], memberId: 1
+booksOnHold: 10
+, memberId: 1
+booksOnHold: 10
+</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.merger.ProtoMergerTest@3e27aa33</td></tr>
 <tr>
 <td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: memberId: 1
 booksOnHold: 5
@@ -107,7 +111,20 @@ booksOnHold: 5
 </td>
 <td></td>
 <td>0</td>
-<td>com.jash.protokit.merger.ProtoMergerTest@750e2b97</td></tr>
+<td>com.jash.protokit.merger.ProtoMergerTest@3e27aa33</td></tr>
+<tr>
+<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: memberId: 1
+booksOnHold: 5
+, memberId: 1
+booksOnHold: 10
+, MergeOptions [primitiveConflictResolver={Member.booksOnHold=FIRST}, mergeRepeatedByField={}, excludeFields=[]], memberId: 1
+booksOnHold: 5
+, memberId: 1
+booksOnHold: 5
+</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.merger.ProtoMergerTest@3e27aa33</td></tr>
 <tr>
 <td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: memberId: 1
 booksOnHold: 5
@@ -120,25 +137,75 @@ booksOnHold: 10
 </td>
 <td></td>
 <td>0</td>
-<td>com.jash.protokit.merger.ProtoMergerTest@750e2b97</td></tr>
+<td>com.jash.protokit.merger.ProtoMergerTest@3e27aa33</td></tr>
 <tr>
-<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: phoneNumbers: "1234567890"
-phoneNumbers: "0987654321"
-, phoneNumbers: "0987654321"
-phoneNumbers: "9876543210"
-phoneNumbers: "8765432109"
-, MergeOptions [primitiveConflictResolver={}, mergeRepeatedByField={Member.phoneNumbers=null}, excludeFields=[]], phoneNumbers: "1234567890"
-phoneNumbers: "0987654321"
-phoneNumbers: "9876543210"
-phoneNumbers: "8765432109"
-, phoneNumbers: "0987654321"
-phoneNumbers: "9876543210"
-phoneNumbers: "8765432109"
-phoneNumbers: "1234567890"
+<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: borrowHistory {
+  bookId: 2
+  name: "Book name 2"
+  author: "Author name 2"
+  genre: "Genre name 2"
+}
+borrowHistory {
+  bookId: 1
+  name: "Book name"
+  author: "Author name"
+}
+, borrowHistory {
+  bookId: 1
+  genre: "Genre name"
+  status: BORROWED
+}
+borrowHistory {
+  bookId: 3
+  name: "Book name 3"
+  author: "Author name 3"
+  genre: "Genre name 3"
+  status: BORROWED
+}
+, MergeOptions [primitiveConflictResolver={}, mergeRepeatedByField={Member.borrowHistory=Book.bookId}, excludeFields=[]], borrowHistory {
+  bookId: 1
+  name: "Book name"
+  author: "Author name"
+  genre: "Genre name"
+  status: BORROWED
+}
+borrowHistory {
+  bookId: 2
+  name: "Book name 2"
+  author: "Author name 2"
+  genre: "Genre name 2"
+}
+borrowHistory {
+  bookId: 3
+  name: "Book name 3"
+  author: "Author name 3"
+  genre: "Genre name 3"
+  status: BORROWED
+}
+, borrowHistory {
+  bookId: 1
+  name: "Book name"
+  author: "Author name"
+  genre: "Genre name"
+  status: BORROWED
+}
+borrowHistory {
+  bookId: 2
+  name: "Book name 2"
+  author: "Author name 2"
+  genre: "Genre name 2"
+}
+borrowHistory {
+  bookId: 3
+  name: "Book name 3"
+  author: "Author name 3"
+  genre: "Genre name 3"
+  status: BORROWED
+}
 </td>
 <td></td>
 <td>0</td>
-<td>com.jash.protokit.merger.ProtoMergerTest@750e2b97</td></tr>
+<td>com.jash.protokit.merger.ProtoMergerTest@3e27aa33</td></tr>
 <tr>
 <td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: street: "Street name"
 state: "State name"
@@ -157,44 +224,45 @@ country: "Country name"
 </td>
 <td></td>
 <td>0</td>
-<td>com.jash.protokit.merger.ProtoMergerTest@750e2b97</td></tr>
+<td>com.jash.protokit.merger.ProtoMergerTest@3e27aa33</td></tr>
 <tr>
-<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: memberId: 1
-booksOnHold: 5
-, memberId: 1
-booksOnHold: 10
-, MergeOptions [primitiveConflictResolver={Member.booksOnHold=SECOND}, mergeRepeatedByField={}, excludeFields=[]], memberId: 1
-booksOnHold: 10
-, memberId: 1
-booksOnHold: 10
+<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: bookId: 1
+status: BORROWED
+, name: "Book name"
+author: "Author name"
+genre: "Genre name"
+, null, bookId: 1
+name: "Book name"
+author: "Author name"
+genre: "Genre name"
+status: BORROWED
+, bookId: 1
+name: "Book name"
+author: "Author name"
+genre: "Genre name"
+status: BORROWED
 </td>
 <td></td>
 <td>0</td>
-<td>com.jash.protokit.merger.ProtoMergerTest@750e2b97</td></tr>
+<td>com.jash.protokit.merger.ProtoMergerTest@3e27aa33</td></tr>
 <tr>
-<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: memberId: 1
-booksOnHold: 5
-, memberId: 1
-booksOnHold: 10
-, MergeOptions [primitiveConflictResolver={Member.booksOnHold=DEFAULT}, mergeRepeatedByField={}, excludeFields=[]], memberId: 1
-, memberId: 1
+<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: phoneNumbers: "1234567890"
+phoneNumbers: "0987654321"
+, phoneNumbers: "0987654321"
+phoneNumbers: "9876543210"
+phoneNumbers: "8765432109"
+, MergeOptions [primitiveConflictResolver={}, mergeRepeatedByField={Member.phoneNumbers=null}, excludeFields=[]], phoneNumbers: "1234567890"
+phoneNumbers: "0987654321"
+phoneNumbers: "9876543210"
+phoneNumbers: "8765432109"
+, phoneNumbers: "0987654321"
+phoneNumbers: "9876543210"
+phoneNumbers: "8765432109"
+phoneNumbers: "1234567890"
 </td>
 <td></td>
 <td>0</td>
-<td>com.jash.protokit.merger.ProtoMergerTest@750e2b97</td></tr>
-<tr>
-<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: memberId: 1
-booksOnHold: 5
-, memberId: 1
-booksOnHold: 10
-, MergeOptions [primitiveConflictResolver={Member.booksOnHold=FIRST}, mergeRepeatedByField={}, excludeFields=[]], memberId: 1
-booksOnHold: 5
-, memberId: 1
-booksOnHold: 5
-</td>
-<td></td>
-<td>0</td>
-<td>com.jash.protokit.merger.ProtoMergerTest@750e2b97</td></tr>
+<td>com.jash.protokit.merger.ProtoMergerTest@3e27aa33</td></tr>
 </table><p>
 </body>
 </html>
