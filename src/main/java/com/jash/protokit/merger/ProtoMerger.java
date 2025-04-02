@@ -28,11 +28,15 @@ public class ProtoMerger {
 	 * @param beta  - beta message to merge into from alpha message.
 	 * @return A {@link Result} object containing the merged messages.
 	 */
-	public static Result merge(Message alpha, Message beta, MergeOptions options) {
+	public static <T extends Message> Result<T> merge(T alpha, T beta, MergeOptions options) {
 		Builder alphaBuilder = alpha.toBuilder();
 		Builder betaBuilder = beta.toBuilder();
 		merge(alphaBuilder, betaBuilder, options);
-		return new Result(alphaBuilder.build(), betaBuilder.build());
+		@SuppressWarnings("unchecked")
+		T first = (T) alphaBuilder.build();
+		@SuppressWarnings("unchecked")
+		T second = (T) betaBuilder.build();
+		return new Result<T>(first, second);
 	}
 
 	/**

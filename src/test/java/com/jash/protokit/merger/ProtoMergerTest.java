@@ -144,7 +144,7 @@ public class ProtoMergerTest {
 	@Test(dataProvider = "dataProvider")
 	public void testMerger(Message message1, Message message2, MergeOptions options, Message expected1,
 			Message expected2) {
-		Result result = ProtoMerger.merge(message1, message2, options);
+		Result<Message> result = ProtoMerger.merge(message1, message2, options);
 		assertEquals(result.getFirst(), expected1);
 		assertEquals(result.getSecond(), expected2);
 	}

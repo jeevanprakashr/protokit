@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-02T12:38:06 IST" name="Default suite" finished-at="2025-04-02T12:38:06 IST" duration-ms="365">
+  <suite started-at="2025-04-02T20:14:28 IST" name="Default suite" finished-at="2025-04-02T20:14:29 IST" duration-ms="400">
     <groups>
     </groups>
-    <test started-at="2025-04-02T12:38:06 IST" name="Default test" finished-at="2025-04-02T12:38:06 IST" duration-ms="365">
+    <test started-at="2025-04-02T20:14:28 IST" name="Default test" finished-at="2025-04-02T20:14:29 IST" duration-ms="400">
       <class name="com.jash.protokit.merger.ProtoMergerTest">
-        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@3e27aa33]" started-at="2025-04-02T12:38:06 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-02T12:38:06 IST" duration-ms="160" status="PASS">
+        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@3e27aa33]" started-at="2025-04-02T20:14:28 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-02T20:14:28 IST" duration-ms="166" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -51,7 +51,7 @@ status: BORROWED
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMerger -->
-        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@3e27aa33]" started-at="2025-04-02T12:38:06 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-02T12:38:06 IST" duration-ms="10" status="PASS">
+        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@3e27aa33]" started-at="2025-04-02T20:14:28 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-02T20:14:28 IST" duration-ms="10" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -90,7 +90,7 @@ booksOnHold: 10
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMerger -->
-        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@3e27aa33]" started-at="2025-04-02T12:38:06 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-02T12:38:06 IST" duration-ms="2" status="PASS">
+        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@3e27aa33]" started-at="2025-04-02T20:14:29 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-02T20:14:29 IST" duration-ms="5" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -129,7 +129,7 @@ booksOnHold: 5
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMerger -->
-        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@3e27aa33]" started-at="2025-04-02T12:38:06 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-02T12:38:06 IST" duration-ms="2" status="PASS">
+        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@3e27aa33]" started-at="2025-04-02T20:14:29 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-02T20:14:29 IST" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -168,7 +168,7 @@ booksOnHold: 5
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMerger -->
-        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@3e27aa33]" started-at="2025-04-02T12:38:06 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-02T12:38:06 IST" duration-ms="3" status="PASS">
+        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@3e27aa33]" started-at="2025-04-02T20:14:29 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-02T20:14:29 IST" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -207,7 +207,7 @@ booksOnHold: 10
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMerger -->
-        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@3e27aa33]" started-at="2025-04-02T12:38:06 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-02T12:38:06 IST" duration-ms="5" status="PASS">
+        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@3e27aa33]" started-at="2025-04-02T20:14:29 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-02T20:14:29 IST" duration-ms="4" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -244,7 +244,7 @@ booksOnHold: 10
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMerger -->
-        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@3e27aa33]" started-at="2025-04-02T12:38:06 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-02T12:38:06 IST" duration-ms="5" status="PASS">
+        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@3e27aa33]" started-at="2025-04-02T20:14:29 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-02T20:14:29 IST" duration-ms="5" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -289,7 +289,7 @@ country: "Country name"
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMerger -->
-        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@3e27aa33]" started-at="2025-04-02T12:38:06 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-02T12:38:06 IST" duration-ms="9" status="PASS">
+        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@3e27aa33]" started-at="2025-04-02T20:14:29 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-02T20:14:29 IST" duration-ms="10" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -333,7 +333,7 @@ phoneNumbers: "1234567890"
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMerger -->
-        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@3e27aa33]" started-at="2025-04-02T12:38:06 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-02T12:38:06 IST" duration-ms="7" status="PASS">
+        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@3e27aa33]" started-at="2025-04-02T20:14:29 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-02T20:14:29 IST" duration-ms="7" status="PASS">
           <params>
             <param index="0">
               <value>

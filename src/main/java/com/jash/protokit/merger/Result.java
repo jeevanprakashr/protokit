@@ -7,12 +7,12 @@ import com.google.protobuf.Message;
  * 
  * @author Jeevan Prakash (jeevanprakash1998@gmail.com)
  */
-public class Result {
+public class Result<T extends Message> {
 
-	private Message alpha;
-	private Message beta;
+	private T alpha;
+	private T beta;
 
-	protected Result(Message alpha, Message beta) {
+	protected Result(T alpha, T beta) {
 		this.alpha = alpha;
 		this.beta = beta;
 	}
@@ -22,7 +22,7 @@ public class Result {
 	 * 
 	 * @return The first message.
 	 */
-	public Message getFirst() {
+	public T getFirst() {
 		return alpha;
 	}
 
@@ -31,7 +31,7 @@ public class Result {
 	 * 
 	 * @return The second message.
 	 */
-	public Message getSecond() {
+	public T getSecond() {
 		return beta;
 	}
 
