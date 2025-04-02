@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.jash.protokit.merger.ProtoMergerTest">
+      <class name="com.jash.protokit.simplifier.ProtoSimplifierTest">
         <methods>
-          <include name="testMerger" invocation-numbers="8"/>
+          <include name="testSimplifier" invocation-numbers="2"/>
         </methods>
-      </class> <!-- com.jash.protokit.merger.ProtoMergerTest -->
+      </class> <!-- com.jash.protokit.simplifier.ProtoSimplifierTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>9/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>2/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Apr 02 20:14:28 IST 2025</td>
+<td>Started on:</td><td>Wed Apr 02 23:08:52 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (400 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (297 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,108 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.jash.protokit.simplifier.ProtoSimplifierTest.testSimplifier()'><b>testSimplifier</b><br>Test class: com.jash.protokit.simplifier.ProtoSimplifierTest<br>Parameters: name: "Book name"
+author: "Author name"
+genre: "Genre name"
+status: BORROWED
+, name: "Book name"
+author: "Author name"
+genre: "Genre name"
+, null</td>
+<td><div><pre>java.lang.AssertionError: expected [name: &quot;Book name&quot;
+author: &quot;Author name&quot;
+genre: &quot;Genre name&quot;
+] but found [name: &quot;Book name&quot;
+author: &quot;Author name&quot;
+genre: &quot;Genre name&quot;
+status: BORROWED
+]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:644)
+	at com.jash.protokit.simplifier.ProtoSimplifierTest.testSimplifier(ProtoSimplifierTest.java:73)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1636291061", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1636291061'><pre>java.lang.AssertionError: expected [name: &quot;Book name&quot;
+author: &quot;Author name&quot;
+genre: &quot;Genre name&quot;
+] but found [name: &quot;Book name&quot;
+author: &quot;Author name&quot;
+genre: &quot;Genre name&quot;
+status: BORROWED
+]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:644)
+	at com.jash.protokit.simplifier.ProtoSimplifierTest.testSimplifier(ProtoSimplifierTest.java:73)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.jash.protokit.simplifier.ProtoSimplifierTest@4145bad8</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,193 +178,32 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: memberId: 1
-booksOnHold: 5
-, memberId: 1
-booksOnHold: 10
-, MergeOptions [primitiveConflictResolver={Member.booksOnHold=DEFAULT}, mergeRepeatedByField={}, excludeFields=[]], memberId: 1
-, memberId: 1
-</td>
-<td></td>
-<td>0</td>
-<td>com.jash.protokit.merger.ProtoMergerTest@3e27aa33</td></tr>
-<tr>
-<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: memberId: 1
-booksOnHold: 5
-, memberId: 1
-booksOnHold: 10
-, MergeOptions [primitiveConflictResolver={Member.booksOnHold=SECOND}, mergeRepeatedByField={}, excludeFields=[]], memberId: 1
-booksOnHold: 10
-, memberId: 1
-booksOnHold: 10
-</td>
-<td></td>
-<td>0</td>
-<td>com.jash.protokit.merger.ProtoMergerTest@3e27aa33</td></tr>
-<tr>
-<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: memberId: 1
-booksOnHold: 5
-, memberId: 1
-booksOnHold: 10
-, MergeOptions [primitiveConflictResolver={Member.booksOnHold=LESSER}, mergeRepeatedByField={}, excludeFields=[]], memberId: 1
-booksOnHold: 5
-, memberId: 1
-booksOnHold: 5
-</td>
-<td></td>
-<td>0</td>
-<td>com.jash.protokit.merger.ProtoMergerTest@3e27aa33</td></tr>
-<tr>
-<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: memberId: 1
-booksOnHold: 5
-, memberId: 1
-booksOnHold: 10
-, MergeOptions [primitiveConflictResolver={Member.booksOnHold=FIRST}, mergeRepeatedByField={}, excludeFields=[]], memberId: 1
-booksOnHold: 5
-, memberId: 1
-booksOnHold: 5
-</td>
-<td></td>
-<td>0</td>
-<td>com.jash.protokit.merger.ProtoMergerTest@3e27aa33</td></tr>
-<tr>
-<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: memberId: 1
-booksOnHold: 5
-, memberId: 1
-booksOnHold: 10
-, MergeOptions [primitiveConflictResolver={Member.booksOnHold=GREATER}, mergeRepeatedByField={}, excludeFields=[]], memberId: 1
-booksOnHold: 10
-, memberId: 1
-booksOnHold: 10
-</td>
-<td></td>
-<td>0</td>
-<td>com.jash.protokit.merger.ProtoMergerTest@3e27aa33</td></tr>
-<tr>
-<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: borrowHistory {
-  bookId: 2
-  name: "Book name 2"
-  author: "Author name 2"
-  genre: "Genre name 2"
-}
-borrowHistory {
-  bookId: 1
-  name: "Book name"
-  author: "Author name"
-}
-, borrowHistory {
-  bookId: 1
-  genre: "Genre name"
-  status: BORROWED
-}
-borrowHistory {
-  bookId: 3
-  name: "Book name 3"
-  author: "Author name 3"
-  genre: "Genre name 3"
-  status: BORROWED
-}
-, MergeOptions [primitiveConflictResolver={}, mergeRepeatedByField={Member.borrowHistory=Book.bookId}, excludeFields=[]], borrowHistory {
-  bookId: 1
-  name: "Book name"
-  author: "Author name"
-  genre: "Genre name"
-  status: BORROWED
-}
-borrowHistory {
-  bookId: 2
-  name: "Book name 2"
-  author: "Author name 2"
-  genre: "Genre name 2"
-}
-borrowHistory {
-  bookId: 3
-  name: "Book name 3"
-  author: "Author name 3"
-  genre: "Genre name 3"
-  status: BORROWED
-}
-, borrowHistory {
-  bookId: 1
-  name: "Book name"
-  author: "Author name"
-  genre: "Genre name"
-  status: BORROWED
-}
-borrowHistory {
-  bookId: 2
-  name: "Book name 2"
-  author: "Author name 2"
-  genre: "Genre name 2"
-}
-borrowHistory {
-  bookId: 3
-  name: "Book name 3"
-  author: "Author name 3"
-  genre: "Genre name 3"
-  status: BORROWED
-}
-</td>
-<td></td>
-<td>0</td>
-<td>com.jash.protokit.merger.ProtoMergerTest@3e27aa33</td></tr>
-<tr>
-<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: street: "Street name"
-state: "State name"
-postal_code: "Postal code"
-, city: "City name"
-country: "Country name"
-, MergeOptions [primitiveConflictResolver={}, mergeRepeatedByField={}, excludeFields=[Address.country]], street: "Street name"
+<td title='com.jash.protokit.simplifier.ProtoSimplifierTest.testSimplifier()'><b>testSimplifier</b><br>Test class: com.jash.protokit.simplifier.ProtoSimplifierTest<br>Parameters: street: "Street name"
 city: "City name"
 state: "State name"
 postal_code: "Postal code"
+country: "Country name"
+, street: "Street name"
+city: "City name"
+state: "State name"
+, SimplifyOptions [dropFields=[Address.postal_code, Address.country]]</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.simplifier.ProtoSimplifierTest@4145bad8</td></tr>
+<tr>
+<td title='com.jash.protokit.simplifier.ProtoSimplifierTest.testSimplifier()'><b>testSimplifier</b><br>Test class: com.jash.protokit.simplifier.ProtoSimplifierTest<br>Parameters: street: "Street name"
+city: "City name"
+state: "State name"
+postal_code: "Postal code"
+5: "Country name"
 , street: "Street name"
 city: "City name"
 state: "State name"
 postal_code: "Postal code"
-country: "Country name"
-</td>
+, null</td>
 <td></td>
 <td>0</td>
-<td>com.jash.protokit.merger.ProtoMergerTest@3e27aa33</td></tr>
-<tr>
-<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: bookId: 1
-status: BORROWED
-, name: "Book name"
-author: "Author name"
-genre: "Genre name"
-, null, bookId: 1
-name: "Book name"
-author: "Author name"
-genre: "Genre name"
-status: BORROWED
-, bookId: 1
-name: "Book name"
-author: "Author name"
-genre: "Genre name"
-status: BORROWED
-</td>
-<td></td>
-<td>0</td>
-<td>com.jash.protokit.merger.ProtoMergerTest@3e27aa33</td></tr>
-<tr>
-<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: phoneNumbers: "1234567890"
-phoneNumbers: "0987654321"
-, phoneNumbers: "0987654321"
-phoneNumbers: "9876543210"
-phoneNumbers: "8765432109"
-, MergeOptions [primitiveConflictResolver={}, mergeRepeatedByField={Member.phoneNumbers=null}, excludeFields=[]], phoneNumbers: "1234567890"
-phoneNumbers: "0987654321"
-phoneNumbers: "9876543210"
-phoneNumbers: "8765432109"
-, phoneNumbers: "0987654321"
-phoneNumbers: "9876543210"
-phoneNumbers: "8765432109"
-phoneNumbers: "1234567890"
-</td>
-<td></td>
-<td>0</td>
-<td>com.jash.protokit.merger.ProtoMergerTest@3e27aa33</td></tr>
+<td>com.jash.protokit.simplifier.ProtoSimplifierTest@4145bad8</td></tr>
 </table><p>
 </body>
 </html>

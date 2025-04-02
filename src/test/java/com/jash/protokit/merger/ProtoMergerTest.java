@@ -18,7 +18,7 @@ import com.jash.protokit.merger.MergeOptions.Resolver;
 
 public class ProtoMergerTest {
 
-	public Object[] getMergeMissingFieldsCase() {
+	private Object[] getMergeMissingFieldsCase() {
 		Object[] data = new Object[5];
 		Book message1 = Book.newBuilder().setBookId(1).setStatus(BookStatus.BORROWED).build();
 		Book message2 = Book.newBuilder().setName("Book name").setAuthor("Author name").setGenre("Genre name").build();
@@ -32,7 +32,7 @@ public class ProtoMergerTest {
 		return data;
 	}
 
-	public Object[] getPrimitiveResolverCase(Resolver resolver) {
+	private Object[] getPrimitiveResolverCase(Resolver resolver) {
 		Object[] data = new Object[5];
 		Member message1 = Member.newBuilder().setMemberId(1).setBooksOnHold(5).build();
 		Member message2 = Member.newBuilder().setMemberId(1).setBooksOnHold(10).build();
@@ -66,7 +66,7 @@ public class ProtoMergerTest {
 		return data;
 	}
 
-	public Object[] getExcludeFieldCase() {
+	private Object[] getExcludeFieldCase() {
 		Object[] data = new Object[5];
 		Address message1 = Address.newBuilder().setStreet("Street name").setState("State name")
 				.setPostalCode("Postal code").build();
@@ -84,7 +84,7 @@ public class ProtoMergerTest {
 		return data;
 	}
 
-	public Object[] getPrimitiveRepeatedCase() {
+	private Object[] getPrimitiveRepeatedCase() {
 		Object[] data = new Object[5];
 		List<String> phoneNumbers1 = Arrays.asList("1234567890", "0987654321");
 		List<String> phoneNumbers2 = Arrays.asList("0987654321", "9876543210", "8765432109");
@@ -104,7 +104,7 @@ public class ProtoMergerTest {
 		return data;
 	}
 
-	public Object[] getMergeRepeatedByFieldCase() {
+	private Object[] getMergeRepeatedByFieldCase() {
 		Object[] data = new Object[5];
 		Book book1 = Book.newBuilder().setBookId(1).setName("Book name").setAuthor("Author name").build();
 		Book book2 = Book.newBuilder().setBookId(1).setGenre("Genre name").setStatus(BookStatus.BORROWED).build();

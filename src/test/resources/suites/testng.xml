@@ -2,7 +2,9 @@
 <suite name="protokit" verbose="1">
 	<test name="merger">
 		<classes>
-			<class name="com.jash.protokit.merger.ProtoSimplifierTest" />
+			<class name="com.jash.protokit.simplifier.ProtoSimplifierTest" />
+			<class name="com.jash.protokit.merger.ProtoMergerTest" />
+			<class name="com.jash.protokit.comparer.ProtoComparerTest" />
 		</classes>
 	</test>
 </suite>

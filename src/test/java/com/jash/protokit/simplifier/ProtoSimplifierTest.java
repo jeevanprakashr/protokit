@@ -49,7 +49,7 @@ public class ProtoSimplifierTest {
 	private Object[] getDropDefaultFieldCase() {
 		Object[] data = new Object[3];
 		Book toBeSimplified = Book.newBuilder().setBookId(0).setName("Book name").setAuthor("Author name")
-				.setGenre("Genre name").setStatus(BookStatus.BORROWED).build();
+				.setGenre("Genre name").setStatus(BookStatus.AVAILABLE).build();
 		Book expected = Book.newBuilder().setBookId(0).setName("Book name").setAuthor("Author name")
 				.setGenre("Genre name").build();
 		data[0] = toBeSimplified;

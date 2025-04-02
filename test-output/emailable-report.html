@@ -8,46 +8,26 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">9</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">400</td><td></td><td></td></tr>
+<tr><th colspan="8">protokit</th></tr>
+<tr><td><a href="#t0">merger</a></td><td class="num">13</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">554</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="9">com.jash.protokit.merger.ProtoMergerTest</td><td><a href="#m0">testMerger</a></td><td rowspan="9">1743605069026</td><td rowspan="9">4</td></tr><tr class="passedeven"><td><a href="#m1">testMerger</a></td></tr><tr class="passedeven"><td><a href="#m2">testMerger</a></td></tr><tr class="passedeven"><td><a href="#m3">testMerger</a></td></tr><tr class="passedeven"><td><a href="#m4">testMerger</a></td></tr><tr class="passedeven"><td><a href="#m5">testMerger</a></td></tr><tr class="passedeven"><td><a href="#m6">testMerger</a></td></tr><tr class="passedeven"><td><a href="#m7">testMerger</a></td></tr><tr class="passedeven"><td><a href="#m8">testMerger</a></td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">protokit</th></tr></tbody><tbody id="t0"><tr><th colspan="4">merger &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.jash.protokit.comparer.ProtoComparerTest</td><td><a href="#m0">testComparer</a></td><td rowspan="1">1743615661083</td><td rowspan="1">33</td></tr><tr class="passedodd"><td rowspan="9">com.jash.protokit.merger.ProtoMergerTest</td><td><a href="#m1">testMerger</a></td><td rowspan="9">1743615660884</td><td rowspan="9">13</td></tr><tr class="passedodd"><td><a href="#m2">testMerger</a></td></tr><tr class="passedodd"><td><a href="#m3">testMerger</a></td></tr><tr class="passedodd"><td><a href="#m4">testMerger</a></td></tr><tr class="passedodd"><td><a href="#m5">testMerger</a></td></tr><tr class="passedodd"><td><a href="#m6">testMerger</a></td></tr><tr class="passedodd"><td><a href="#m7">testMerger</a></td></tr><tr class="passedodd"><td><a href="#m8">testMerger</a></td></tr><tr class="passedodd"><td><a href="#m9">testMerger</a></td></tr><tr class="passedeven"><td rowspan="3">com.jash.protokit.simplifier.ProtoSimplifierTest</td><td><a href="#m10">testSimplifier</a></td><td rowspan="3">1743615660732</td><td rowspan="3">90</td></tr><tr class="passedeven"><td><a href="#m11">testSimplifier</a></td></tr><tr class="passedeven"><td><a href="#m12">testSimplifier</a></td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">com.jash.protokit.merger.ProtoMergerTest#testMerger</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>memberId: 1
-booksOnHold: 5
-</td><td>memberId: 1
-booksOnHold: 10
-</td><td>MergeOptions [primitiveConflictResolver={Member.booksOnHold=DEFAULT}, mergeRepeatedByField={}, excludeFields=[]]</td><td>memberId: 1
-</td><td>memberId: 1
+<h2>merger</h2><h3 id="m0">com.jash.protokit.comparer.ProtoComparerTest#testComparer</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th></tr><tr class="param stripe"><td>street: &quot;Street name&quot;
+city: &quot;City name 1&quot;
+state: &quot;State name&quot;
+country: &quot;Country name&quot;
+</td><td>street: &quot;Street name&quot;
+city: &quot;City name 2&quot;
+state: &quot;State name&quot;
+postal_code: &quot;Postal code&quot;
+</td><td>null</td><td>  Address: {
+    city: City name 1 =&gt; City name 2
++   postal_code: Postal code
+-   country: Country name
+  }
 </td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m1">com.jash.protokit.merger.ProtoMergerTest#testMerger</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>memberId: 1
-booksOnHold: 5
-</td><td>memberId: 1
-booksOnHold: 10
-</td><td>MergeOptions [primitiveConflictResolver={Member.booksOnHold=SECOND}, mergeRepeatedByField={}, excludeFields=[]]</td><td>memberId: 1
-booksOnHold: 10
-</td><td>memberId: 1
-booksOnHold: 10
-</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.jash.protokit.merger.ProtoMergerTest#testMerger</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>memberId: 1
-booksOnHold: 5
-</td><td>memberId: 1
-booksOnHold: 10
-</td><td>MergeOptions [primitiveConflictResolver={Member.booksOnHold=LESSER}, mergeRepeatedByField={}, excludeFields=[]]</td><td>memberId: 1
-booksOnHold: 5
-</td><td>memberId: 1
-booksOnHold: 5
-</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.jash.protokit.merger.ProtoMergerTest#testMerger</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>memberId: 1
-booksOnHold: 5
-</td><td>memberId: 1
-booksOnHold: 10
-</td><td>MergeOptions [primitiveConflictResolver={Member.booksOnHold=FIRST}, mergeRepeatedByField={}, excludeFields=[]]</td><td>memberId: 1
-booksOnHold: 5
-</td><td>memberId: 1
-booksOnHold: 5
-</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">com.jash.protokit.merger.ProtoMergerTest#testMerger</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>memberId: 1
 booksOnHold: 5
 </td><td>memberId: 1
 booksOnHold: 10
@@ -56,7 +36,23 @@ booksOnHold: 10
 </td><td>memberId: 1
 booksOnHold: 10
 </td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">com.jash.protokit.merger.ProtoMergerTest#testMerger</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>borrowHistory {
+<h3 id="m2">com.jash.protokit.merger.ProtoMergerTest#testMerger</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>bookId: 1
+status: BORROWED
+</td><td>name: &quot;Book name&quot;
+author: &quot;Author name&quot;
+genre: &quot;Genre name&quot;
+</td><td>null</td><td>bookId: 1
+name: &quot;Book name&quot;
+author: &quot;Author name&quot;
+genre: &quot;Genre name&quot;
+status: BORROWED
+</td><td>bookId: 1
+name: &quot;Book name&quot;
+author: &quot;Author name&quot;
+genre: &quot;Genre name&quot;
+status: BORROWED
+</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.jash.protokit.merger.ProtoMergerTest#testMerger</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>borrowHistory {
   bookId: 2
   name: &quot;Book name 2&quot;
   author: &quot;Author name 2&quot;
@@ -120,6 +116,24 @@ borrowHistory {
   status: BORROWED
 }
 </td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">com.jash.protokit.merger.ProtoMergerTest#testMerger</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>memberId: 1
+booksOnHold: 5
+</td><td>memberId: 1
+booksOnHold: 10
+</td><td>MergeOptions [primitiveConflictResolver={Member.booksOnHold=SECOND}, mergeRepeatedByField={}, excludeFields=[]]</td><td>memberId: 1
+booksOnHold: 10
+</td><td>memberId: 1
+booksOnHold: 10
+</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">com.jash.protokit.merger.ProtoMergerTest#testMerger</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>memberId: 1
+booksOnHold: 5
+</td><td>memberId: 1
+booksOnHold: 10
+</td><td>MergeOptions [primitiveConflictResolver={Member.booksOnHold=FIRST}, mergeRepeatedByField={}, excludeFields=[]]</td><td>memberId: 1
+booksOnHold: 5
+</td><td>memberId: 1
+booksOnHold: 5
+</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m6">com.jash.protokit.merger.ProtoMergerTest#testMerger</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>street: &quot;Street name&quot;
 state: &quot;State name&quot;
 postal_code: &quot;Postal code&quot;
@@ -135,23 +149,23 @@ state: &quot;State name&quot;
 postal_code: &quot;Postal code&quot;
 country: &quot;Country name&quot;
 </td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m7">com.jash.protokit.merger.ProtoMergerTest#testMerger</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>bookId: 1
-status: BORROWED
-</td><td>name: &quot;Book name&quot;
-author: &quot;Author name&quot;
-genre: &quot;Genre name&quot;
-</td><td>null</td><td>bookId: 1
-name: &quot;Book name&quot;
-author: &quot;Author name&quot;
-genre: &quot;Genre name&quot;
-status: BORROWED
-</td><td>bookId: 1
-name: &quot;Book name&quot;
-author: &quot;Author name&quot;
-genre: &quot;Genre name&quot;
-status: BORROWED
+<h3 id="m7">com.jash.protokit.merger.ProtoMergerTest#testMerger</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>memberId: 1
+booksOnHold: 5
+</td><td>memberId: 1
+booksOnHold: 10
+</td><td>MergeOptions [primitiveConflictResolver={Member.booksOnHold=LESSER}, mergeRepeatedByField={}, excludeFields=[]]</td><td>memberId: 1
+booksOnHold: 5
+</td><td>memberId: 1
+booksOnHold: 5
 </td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m8">com.jash.protokit.merger.ProtoMergerTest#testMerger</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>phoneNumbers: &quot;1234567890&quot;
+<h3 id="m8">com.jash.protokit.merger.ProtoMergerTest#testMerger</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>memberId: 1
+booksOnHold: 5
+</td><td>memberId: 1
+booksOnHold: 10
+</td><td>MergeOptions [primitiveConflictResolver={Member.booksOnHold=DEFAULT}, mergeRepeatedByField={}, excludeFields=[]]</td><td>memberId: 1
+</td><td>memberId: 1
+</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">com.jash.protokit.merger.ProtoMergerTest#testMerger</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>phoneNumbers: &quot;1234567890&quot;
 phoneNumbers: &quot;0987654321&quot;
 </td><td>phoneNumbers: &quot;0987654321&quot;
 phoneNumbers: &quot;9876543210&quot;
@@ -165,5 +179,31 @@ phoneNumbers: &quot;9876543210&quot;
 phoneNumbers: &quot;8765432109&quot;
 phoneNumbers: &quot;1234567890&quot;
 </td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">com.jash.protokit.simplifier.ProtoSimplifierTest#testSimplifier</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>street: &quot;Street name&quot;
+city: &quot;City name&quot;
+state: &quot;State name&quot;
+postal_code: &quot;Postal code&quot;
+country: &quot;Country name&quot;
+</td><td>street: &quot;Street name&quot;
+city: &quot;City name&quot;
+state: &quot;State name&quot;
+</td><td>SimplifyOptions [dropFields=[Address.postal_code, Address.country]]</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">com.jash.protokit.simplifier.ProtoSimplifierTest#testSimplifier</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>name: &quot;Book name&quot;
+author: &quot;Author name&quot;
+genre: &quot;Genre name&quot;
+</td><td>name: &quot;Book name&quot;
+author: &quot;Author name&quot;
+genre: &quot;Genre name&quot;
+</td><td>null</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m12">com.jash.protokit.simplifier.ProtoSimplifierTest#testSimplifier</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>street: &quot;Street name&quot;
+city: &quot;City name&quot;
+state: &quot;State name&quot;
+postal_code: &quot;Postal code&quot;
+5: &quot;Country name&quot;
+</td><td>street: &quot;Street name&quot;
+city: &quot;City name&quot;
+state: &quot;State name&quot;
+postal_code: &quot;Postal code&quot;
+</td><td>null</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
