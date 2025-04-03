@@ -200,34 +200,34 @@ public class ProtoComparer {
 							+ field.getFullName() + " - " + orderByField);
 				}
 			}
-			if (Objects.equals(l1, l2)) {
-				return;
-			}
-			Object value1, value2;
-			int n = Math.max(l1.size(), l2.size());
-			char sign = getSign(v1, v2);
+		}
+		if (Objects.equals(l1, l2)) {
+			return;
+		}
+		Object value1, value2;
+		int n = Math.max(l1.size(), l2.size());
+		char sign = getSign(v1, v2);
 
-			StringBuilder diffSb = new StringBuilder();
+		StringBuilder diffSb = new StringBuilder();
 
-			// Iterate and write each field
-			for (int i = 0; i < n; i++) {
-				value1 = i < l1.size() ? l1.get(i) : null;
-				value2 = i < l2.size() ? l2.get(i) : null;
-				// Skip if values are equal
-				if (Objects.equals(value1, value2)) {
-					continue;
-				}
-				compareSingleField(field, value1, value2, options, diffSb, indent + 1);
+		// Iterate and write each field
+		for (int i = 0; i < n; i++) {
+			value1 = i < l1.size() ? l1.get(i) : null;
+			value2 = i < l2.size() ? l2.get(i) : null;
+			// Skip if values are equal
+			if (Objects.equals(value1, value2)) {
+				continue;
 			}
+			compareSingleField(field, value1, value2, options, diffSb, indent + 1);
+		}
 
-			if (!diffSb.toString().trim().isEmpty()) {
-				// Write repeated field start
-				sb.append(getPrefix(sign, indent)).append(field.getName());
-				sb.append(COLON_SPACE).append(LIST_START);
-				sb.append(diffSb);
-				// Write repeated field end
-				sb.append(getPrefix(sign, indent)).append(LIST_END);
-			}
+		if (!diffSb.toString().trim().isEmpty()) {
+			// Write repeated field start
+			sb.append(getPrefix(sign, indent)).append(field.getName());
+			sb.append(COLON_SPACE).append(LIST_START);
+			sb.append(diffSb);
+			// Write repeated field end
+			sb.append(getPrefix(sign, indent)).append(LIST_END);
 		}
 	}
 

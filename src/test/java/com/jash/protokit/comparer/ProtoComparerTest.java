@@ -2,17 +2,28 @@ package com.jash.protokit.comparer;
 
 import static org.testng.Assert.assertEquals;
 
+import java.io.File;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 import com.google.protobuf.Message;
 import com.jash.protokit.LibraryManagement.Address;
+import com.jash.protokit.LibraryManagement.Book;
+import com.jash.protokit.LibraryManagement.Member;
 
 public class ProtoComparerTest {
 
@@ -27,6 +38,8 @@ public class ProtoComparerTest {
 	private static char SIGN_DELETE;
 	private static char SIGN_EMPTY;
 
+	private Map<String, String> expectedReportMap = new HashMap<>();
+
 	@BeforeClass
 	public void setConstants() {
 		try {
@@ -39,6 +52,28 @@ public class ProtoComparerTest {
 			SIGN_UPDATE = (char) getPredefinedConstant("SIGN_UPDATE");
 			SIGN_DELETE = (char) getPredefinedConstant("SIGN_DELETE");
 			SIGN_EMPTY = (char) getPredefinedConstant("SIGN_EMPTY");
+
+			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+			factory.setFeature("http://xml.org/sax/features/external-general-entities", false);
+			factory.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+			DocumentBuilder docBuilder = factory.newDocumentBuilder();
+			Document doc = docBuilder.parse(new File("src/test/resources/cases/merger.xml"));
+			doc.getDocumentElement().normalize();
+			NodeList cases = doc.getElementsByTagName("case");
+			for (int i = 0; i < cases.getLength(); i++) {
+				Element caseElement = (Element) cases.item(i);
+				String caseName = caseElement.getAttribute("name");
+				Element expectedEle = (Element) caseElement.getElementsByTagName("expected").item(0);
+				NodeList expectedLines = expectedEle.getElementsByTagName("line");
+				StringBuilder expectedSb = new StringBuilder();
+				String line = null;
+				for (int j = 0; j < expectedLines.getLength(); j++) {
+					Element lineElement = (Element) expectedLines.item(j);
+					line = lineElement.getTextContent();
+					expectedSb.append(line).append("\n");
+				}
+				expectedReportMap.put(caseName, expectedSb.toString());
+			}
 		} catch (Exception e) {
 			throw new RuntimeException("Failed to set constants", e);
 		}
@@ -62,30 +97,32 @@ public class ProtoComparerTest {
 	}
 
 	private Object[] getSimpleCompareCase() {
+		String caseName = "simpleCompareCase";
 		Object[] data = new Object[4];
 		Address message1 = Address.newBuilder().setStreet("Street name").setCity("City name 1").setState("State name")
 				.setCountry("Country name").build();
 		Address message2 = Address.newBuilder().setStreet("Street name").setCity("City name 2").setState("State name")
 				.setPostalCode("Postal code").build();
-		StringBuilder expectedSb = new StringBuilder();
-		int level = 0;
-		expectedSb.append(getPrefix(SIGN_UPDATE, level));
-		expectedSb.append("Address").append(COLON_SPACE);
-		expectedSb.append(MESSAGE_START);
-		level++;
-		expectedSb.append(getPrefix(SIGN_UPDATE, level)).append("city").append(COLON_SPACE).append("City name 1")
-				.append(" => ").append("City name 2").append("\n");
-		expectedSb.append(getPrefix(SIGN_CREATE, level)).append("postal_code").append(COLON_SPACE)
-				.append("Postal code").append("\n");
-		expectedSb.append(getPrefix(SIGN_DELETE, level)).append("country").append(COLON_SPACE).append("Country name")
-				.append("\n");
-		level--;
-		expectedSb.append(getPrefix(SIGN_UPDATE, level));
-		expectedSb.append(MESSAGE_END);
 		data[0] = message1;
 		data[1] = message2;
 		data[2] = null;
-		data[3] = expectedSb.toString();
+		data[3] = expectedReportMap.get(caseName);
+		return data;
+	}
+
+	private Object[] getKeyFieldCase() {
+		String caseName = "keyFieldCase";
+		Object[] data = new Object[4];
+		Book book1 = Book.newBuilder().setBookId(1).setGenre("Genre name 1").build();
+		Book book2 = Book.newBuilder().setBookId(1).setGenre("Genre name 2").build();
+		Member message1 = Member.newBuilder().addBorrowHistory(book1).build();
+		Member message2 = Member.newBuilder().addBorrowHistory(book2).build();
+		CompareOptions options = CompareOptions.Builder.newBuilder().setMessageKeyField(Book.class, "Book.bookId")
+				.build();
+		data[0] = message1;
+		data[1] = message2;
+		data[2] = options;
+		data[3] = expectedReportMap.get(caseName);
 		return data;
 	}
 
@@ -93,6 +130,7 @@ public class ProtoComparerTest {
 	public Object[][] dataProvider() {
 		List<Object[]> data = new ArrayList<>();
 		data.add(getSimpleCompareCase());
+		data.add(getKeyFieldCase());
 		return data.toArray(new Object[data.size()][]);
 	}
 

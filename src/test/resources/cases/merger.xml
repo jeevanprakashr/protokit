@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cases>
+	<case name="simpleCompareCase">
+		<expected>
+			<line>  Address: {</line>
+			<line>    city: City name 1 => City name 2</line>
+			<line>+   postal_code: Postal code</line>
+			<line>-   country: Country name</line>
+			<line>  }</line>
+		</expected>
+	</case>
+	<case name="keyFieldCase">
+		<expected>
+			<line>  Member: {</line>
+			<line>    borrowHistory: [</line>
+			<line>      borrowHistory (1): {</line>
+			<line>        genre: Genre name 1 => Genre name 2</line>
+			<line>      }</line>
+			<line>    ]</line>
+			<line>  }</line>
+		</expected>
+	</case>
+</cases>
