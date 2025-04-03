@@ -3,8 +3,6 @@ package com.jash.protokit.comparer;
 import static org.testng.Assert.assertEquals;
 
 import java.io.File;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -27,32 +25,11 @@ import com.jash.protokit.LibraryManagement.Member;
 
 public class ProtoComparerTest {
 
-	private static String MESSAGE_START;
-	private static String MESSAGE_END;
-	private static String LIST_START;
-	private static String LIST_END;
-	private static String COLON_SPACE;
-
-	private static char SIGN_CREATE;
-	private static char SIGN_UPDATE;
-	private static char SIGN_DELETE;
-	private static char SIGN_EMPTY;
-
-	private Map<String, String> expectedReportMap = new HashMap<>();
+	private final Map<String, String> expectedReportMap = new HashMap<>();
 
 	@BeforeClass
-	public void setConstants() {
+	public void getExpectedReports() {
 		try {
-			MESSAGE_START = (String) getPredefinedConstant("MESSAGE_START");
-			MESSAGE_END = (String) getPredefinedConstant("MESSAGE_END");
-			LIST_START = (String) getPredefinedConstant("LIST_START");
-			LIST_END = (String) getPredefinedConstant("LIST_END");
-			COLON_SPACE = (String) getPredefinedConstant("COLON_SPACE");
-			SIGN_CREATE = (char) getPredefinedConstant("SIGN_CREATE");
-			SIGN_UPDATE = (char) getPredefinedConstant("SIGN_UPDATE");
-			SIGN_DELETE = (char) getPredefinedConstant("SIGN_DELETE");
-			SIGN_EMPTY = (char) getPredefinedConstant("SIGN_EMPTY");
-
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			factory.setFeature("http://xml.org/sax/features/external-general-entities", false);
 			factory.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
@@ -76,23 +53,6 @@ public class ProtoComparerTest {
 			}
 		} catch (Exception e) {
 			throw new RuntimeException("Failed to set constants", e);
-		}
-	}
-
-	private Object getPredefinedConstant(String variableName)
-			throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
-		Field field = ProtoComparer.class.getDeclaredField(variableName);
-		field.setAccessible(true);
-		return field.get(null);
-	}
-
-	private char[] getPrefix(char sign, int level) {
-		try {
-			Method method = ProtoComparer.class.getDeclaredMethod("getPrefix", char.class, int.class);
-			method.setAccessible(true);
-			return (char[]) method.invoke(null, sign, level);
-		} catch (Exception e) {
-			throw new RuntimeException("Failed to get prefix", e);
 		}
 	}
 
@@ -126,11 +86,39 @@ public class ProtoComparerTest {
 		return data;
 	}
 
+	private Object[] getCompareRepeatedPrimCase1() {
+		String caseName = "compareRepeatedPrimCase1";
+		Object[] data = new Object[4];
+		Member message1 = Member.newBuilder().addPhoneNumbers("1234567890").addPhoneNumbers("0987654321").build();
+		Member message2 = Member.newBuilder().addPhoneNumbers("0987654321").addPhoneNumbers("9876543210").build();
+		data[0] = message1;
+		data[1] = message2;
+		data[2] = null;
+		data[3] = expectedReportMap.get(caseName);
+		return data;
+	}
+
+	private Object[] getCompareRepeatedPrimCase2() {
+		String caseName = "compareRepeatedPrimCase2";
+		Object[] data = new Object[4];
+		Member message1 = Member.newBuilder().addPhoneNumbers("1234567890").addPhoneNumbers("0987654321").build();
+		Member message2 = Member.newBuilder().addPhoneNumbers("0987654321").addPhoneNumbers("9876543210").build();
+		CompareOptions options = CompareOptions.Builder.newBuilder()
+				.setFieldToOrderRepeatedMsg("Member.phoneNumbers", null).build();
+		data[0] = message1;
+		data[1] = message2;
+		data[2] = options;
+		data[3] = expectedReportMap.get(caseName);
+		return data;
+	}
+
 	@DataProvider(name = "dataProvider")
 	public Object[][] dataProvider() {
 		List<Object[]> data = new ArrayList<>();
 		data.add(getSimpleCompareCase());
 		data.add(getKeyFieldCase());
+		data.add(getCompareRepeatedPrimCase1());
+		data.add(getCompareRepeatedPrimCase2());
 		return data.toArray(new Object[data.size()][]);
 	}
 

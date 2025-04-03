@@ -20,4 +20,23 @@
 			<line>  }</line>
 		</expected>
 	</case>
+	<case name="compareRepeatedPrimCase1">
+		<expected>
+			<line>  Member: {</line>
+			<line>    phoneNumbers: [</line>
+			<line>      phoneNumbers: 1234567890 => 0987654321</line>
+			<line>      phoneNumbers: 0987654321 => 9876543210</line>
+			<line>    ]</line>
+			<line>  }</line>
+		</expected>
+	</case>
+	<case name="compareRepeatedPrimCase2">
+		<expected>
+			<line>  Member: {</line>
+			<line>    phoneNumbers: [</line>
+			<line>      phoneNumbers: 1234567890 => 9876543210</line>
+			<line>    ]</line>
+			<line>  }</line>
+		</expected>
+	</case>
 </cases>

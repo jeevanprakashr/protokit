@@ -5,7 +5,7 @@
     <classes>
       <class name="com.jash.protokit.comparer.ProtoComparerTest">
         <methods>
-          <include name="testComparer" invocation-numbers="1"/>
+          <include name="testComparer" invocation-numbers="2"/>
           <include name="setConstants"/>
         </methods>
       </class> <!-- com.jash.protokit.comparer.ProtoComparerTest -->

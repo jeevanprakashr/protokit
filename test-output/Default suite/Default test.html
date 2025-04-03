@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>2/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>4/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Apr 03 22:32:31 IST 2025</td>
+<td>Started on:</td><td>Thu Apr 03 22:56:50 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (314 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (444 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -107,6 +107,35 @@ postal_code: "Postal code"
       borrowHistory (1): {
         genre: Genre name 1 => Genre name 2
       }
+    ]
+  }
+</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.comparer.ProtoComparerTest@4a83a74a</td></tr>
+<tr>
+<td title='com.jash.protokit.comparer.ProtoComparerTest.testComparer()'><b>testComparer</b><br>Test class: com.jash.protokit.comparer.ProtoComparerTest<br>Parameters: phoneNumbers: "1234567890"
+phoneNumbers: "0987654321"
+, phoneNumbers: "0987654321"
+phoneNumbers: "9876543210"
+, CompareOptions [messageVsKeyField={}, orderRepeatedMsgByField={Member.phoneNumbers=null}, excludeFields=[], redactionFields=[], protoMapper=null],   Member: {
+    phoneNumbers: [
+      phoneNumbers: 1234567890 => 9876543210
+    ]
+  }
+</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.comparer.ProtoComparerTest@4a83a74a</td></tr>
+<tr>
+<td title='com.jash.protokit.comparer.ProtoComparerTest.testComparer()'><b>testComparer</b><br>Test class: com.jash.protokit.comparer.ProtoComparerTest<br>Parameters: phoneNumbers: "1234567890"
+phoneNumbers: "0987654321"
+, phoneNumbers: "0987654321"
+phoneNumbers: "9876543210"
+, null,   Member: {
+    phoneNumbers: [
+      phoneNumbers: 1234567890 => 0987654321
+      phoneNumbers: 0987654321 => 9876543210
     ]
   }
 </td>
