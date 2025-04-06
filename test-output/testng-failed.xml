@@ -5,8 +5,8 @@
     <classes>
       <class name="com.jash.protokit.comparer.ProtoComparerTest">
         <methods>
-          <include name="testComparer" invocation-numbers="2"/>
-          <include name="setConstants"/>
+          <include name="getExpectedReports"/>
+          <include name="testComparer" invocation-numbers="4"/>
         </methods>
       </class> <!-- com.jash.protokit.comparer.ProtoComparerTest -->
     </classes>

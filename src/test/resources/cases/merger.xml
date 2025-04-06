@@ -39,4 +39,44 @@
 			<line>  }</line>
 		</expected>
 	</case>
+	<case name="compareRepeatedMsgCase">
+		<expected>
+			<line>  Member: {</line>
+			<line>    borrowHistory: [</line>
+			<line>      borrowHistory: {</line>
+			<line>-       name: Book name 1</line>
+			<line>        author: Author name 1 => Author name 2</line>
+			<line>+       genre: Genre name 1</line>
+			<line>-       status: BORROWED</line>
+			<line>      }</line>
+			<line>-     borrowHistory: {</line>
+			<line>-       bookId: 2</line>
+			<line>-       name: Book name 2</line>
+			<line>-       author: Author name 2</line>
+			<line>-       status: BORROWED</line>
+			<line>-     }</line>
+			<line>    ]</line>
+			<line>  }</line>
+		</expected>
+	</case>
+	<case name="compareRepeatedMsgWithKeyFieldCase">
+		<expected>
+			<line>  Member: {</line>
+			<line>    borrowHistory: [</line>
+			<line>      borrowHistory (1): {</line>
+			<line>-       name: Book name 1</line>
+			<line>        author: Author name 1 => Author name 2</line>
+			<line>+       genre: Genre name 1</line>
+			<line>-       status: BORROWED</line>
+			<line>      }</line>
+			<line>-     borrowHistory: {</line>
+			<line>-       bookId: 2</line>
+			<line>-       name: Book name 2</line>
+			<line>-       author: Author name 2</line>
+			<line>-       status: BORROWED</line>
+			<line>-     }</line>
+			<line>    ]</line>
+			<line>  }</line>
+		</expected>
+	</case>
 </cases>

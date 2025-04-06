@@ -21,6 +21,7 @@ import org.w3c.dom.NodeList;
 import com.google.protobuf.Message;
 import com.jash.protokit.LibraryManagement.Address;
 import com.jash.protokit.LibraryManagement.Book;
+import com.jash.protokit.LibraryManagement.BookStatus;
 import com.jash.protokit.LibraryManagement.Member;
 
 public class ProtoComparerTest {
@@ -112,6 +113,44 @@ public class ProtoComparerTest {
 		return data;
 	}
 
+	private Object[] getCompareRepeatedMsgCase() {
+		String caseName = "compareRepeatedMsgCase";
+		Object[] data = new Object[4];
+		Book book11 = Book.newBuilder().setBookId(1).setName("Book name 1").setAuthor("Author name 1")
+				.setStatus(BookStatus.BORROWED).build();
+		Book book12 = Book.newBuilder().setBookId(1).setGenre("Genre name 1").setAuthor("Author name 2").build();
+		Book book2 = Book.newBuilder().setBookId(2).setName("Book name 2").setAuthor("Author name 2")
+				.setStatus(BookStatus.BORROWED).build();
+		Member message1 = Member.newBuilder().addBorrowHistory(book2).addBorrowHistory(book11).build();
+		Member message2 = Member.newBuilder().addBorrowHistory(book12).build();
+		CompareOptions options = CompareOptions.Builder.newBuilder()
+				.setFieldToOrderRepeatedMsg("Member.borrowHistory", "Book.bookId").build();
+		data[0] = message1;
+		data[1] = message2;
+		data[2] = options;
+		data[3] = expectedReportMap.get(caseName);
+		return data;
+	}
+
+	private Object[] getComparedRepeatedMsgWithKeyFieldCase() {
+		String caseName = "compareRepeatedMsgWithKeyFieldCase";
+		Object[] data = new Object[4];
+		Book book11 = Book.newBuilder().setBookId(1).setName("Book name 1").setAuthor("Author name 1")
+				.setStatus(BookStatus.BORROWED).build();
+		Book book12 = Book.newBuilder().setBookId(1).setGenre("Genre name 1").setAuthor("Author name 2").build();
+		Book book2 = Book.newBuilder().setBookId(2).setName("Book name 2").setAuthor("Author name 2")
+				.setStatus(BookStatus.BORROWED).build();
+		Member message1 = Member.newBuilder().addBorrowHistory(book2).addBorrowHistory(book11).build();
+		Member message2 = Member.newBuilder().addBorrowHistory(book12).build();
+		CompareOptions options = CompareOptions.Builder.newBuilder().setMessageKeyField(Book.class, "Book.bookId")
+				.setFieldToOrderRepeatedMsg("Member.borrowHistory", "Book.bookId").build();
+		data[0] = message1;
+		data[1] = message2;
+		data[2] = options;
+		data[3] = expectedReportMap.get(caseName);
+		return data;
+	}
+
 	@DataProvider(name = "dataProvider")
 	public Object[][] dataProvider() {
 		List<Object[]> data = new ArrayList<>();
@@ -119,6 +158,8 @@ public class ProtoComparerTest {
 		data.add(getKeyFieldCase());
 		data.add(getCompareRepeatedPrimCase1());
 		data.add(getCompareRepeatedPrimCase2());
+		data.add(getCompareRepeatedMsgCase());
+		data.add(getComparedRepeatedMsgWithKeyFieldCase());
 		return data.toArray(new Object[data.size()][]);
 	}
 
