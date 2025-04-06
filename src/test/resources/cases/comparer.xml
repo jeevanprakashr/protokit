@@ -79,4 +79,13 @@
 			<line>  }</line>
 		</expected>
 	</case>
+	<case name="excludeFieldCase">
+		<expected>
+			<line>  Book: {</line>
+			<line>-   name: Book name 1</line>
+			<line>    author: Author name 1 => Author name 2</line>
+			<line>+   genre: Genre name 1</line>
+			<line>  }</line>
+		</expected>
+	</case>
 </cases>

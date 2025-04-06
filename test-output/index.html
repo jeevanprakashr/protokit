@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">6 methods,   6 passed</span>
+                    <span class="method-stats">7 methods,   7 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -133,13 +133,34 @@ country: "Country name"
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.jash.protokit.comparer.ProtoComparerTest" class="method navigator-link" hash-for-method="testComparer(phoneNumbers: &quot;1234567890&quot;
-phoneNumbers: &quot;0987654321&quot;
-, phoneNumbers: &quot;0987654321&quot;
-phoneNumbers: &quot;98...)">testComparer(phoneNumbers: "1234567890"
-phoneNumbers: "0987654321"
-, phoneNumbers: "0987654321"
-phoneNumbers: "98...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.jash.protokit.comparer.ProtoComparerTest" class="method navigator-link" hash-for-method="testComparer(borrowHistory {
+  bookId: 2
+  name: &quot;Book name 2&quot;
+  author: &quot;Author name 2&quot;
+  status: BORROWED
+}
+bor...)">testComparer(borrowHistory {
+  bookId: 2
+  name: "Book name 2"
+  author: "Author name 2"
+  status: BORROWED
+}
+bor...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.jash.protokit.comparer.ProtoComparerTest" class="method navigator-link" hash-for-method="testComparer(bookId: 1
+name: &quot;Book name 1&quot;
+author: &quot;Author name 1&quot;
+status: BORROWED
+, bookId: 1
+author: &quot;Author n...)">testComparer(bookId: 1
+name: "Book name 1"
+author: "Author name 1"
+status: BORROWED
+, bookId: 1
+author: "Author n...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -172,19 +193,13 @@ phoneNumbers: "98...)</a> <!-- method navigator-link -->
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.jash.protokit.comparer.ProtoComparerTest" class="method navigator-link" hash-for-method="testComparer(borrowHistory {
-  bookId: 2
-  name: &quot;Book name 2&quot;
-  author: &quot;Author name 2&quot;
-  status: BORROWED
-}
-bor...)">testComparer(borrowHistory {
-  bookId: 2
-  name: "Book name 2"
-  author: "Author name 2"
-  status: BORROWED
-}
-bor...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.jash.protokit.comparer.ProtoComparerTest" class="method navigator-link" hash-for-method="testComparer(phoneNumbers: &quot;1234567890&quot;
+phoneNumbers: &quot;0987654321&quot;
+, phoneNumbers: &quot;0987654321&quot;
+phoneNumbers: &quot;98...)">testComparer(phoneNumbers: "1234567890"
+phoneNumbers: "0987654321"
+, phoneNumbers: "0987654321"
+phoneNumbers: "98...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -205,6 +220,88 @@ bor...)</a> <!-- method navigator-link -->
               <span class="class-name">com.jash.protokit.comparer.ProtoComparerTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testComparer(borrowHistory {
+  bookId: 2
+  name: &quot;Book name 2&quot;
+  author: &quot;Author name 2&quot;
+  status: BORROWED
+}
+bor...)">
+                  </a> <!-- testComparer(borrowHistory {
+  bookId: 2
+  name: "Book name 2"
+  author: "Author name 2"
+  status: BORROWED
+}
+bor...) -->
+                  <span class="method-name">testComparer</span>
+                  <span class="parameters">(borrowHistory {
+  bookId: 2
+  name: "Book name 2"
+  author: "Author name 2"
+  status: BORROWED
+}
+borrowHistory {
+  bookId: 1
+  name: "Book name 1"
+  author: "Author name 1"
+  status: BORROWED
+}
+,borrowHistory {
+  bookId: 1
+  author: "Author name 2"
+  genre: "Genre name 1"
+}
+,CompareOptions [messageVsKeyField={}, orderRepeatedMsgByField={Member.borrowHistory=Book.bookId}, excludeFields=[], redactionFields=[], protoMapper=null],  Member: {
+    borrowHistory: [
+      borrowHistory: {
+-       name: Book name 1
+        author: Author name 1 => Author name 2
++       genre: Genre name 1
+-       status: BORROWED
+      }
+-     borrowHistory: {
+-       bookId: 2
+-       name: Book name 2
+-       author: Author name 2
+-       status: BORROWED
+-     }
+    ]
+  }
+)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testComparer(street: &quot;Street name&quot;
+city: &quot;City name 1&quot;
+state: &quot;State name&quot;
+country: &quot;Country name&quot;
+, street: &quot;Str...)">
+                  </a> <!-- testComparer(street: "Street name"
+city: "City name 1"
+state: "State name"
+country: "Country name"
+, street: "Str...) -->
+                  <span class="method-name">testComparer</span>
+                  <span class="parameters">(street: "Street name"
+city: "City name 1"
+state: "State name"
+country: "Country name"
+,street: "Street name"
+city: "City name 2"
+state: "State name"
+postal_code: "Postal code"
+,null,  Address: {
+    city: City name 1 => City name 2
++   postal_code: Postal code
+-   country: Country name
+  }
+)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="testComparer(borrowHistory {
@@ -260,52 +357,30 @@ borrowHistory {
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="testComparer(street: &quot;Street name&quot;
-city: &quot;City name 1&quot;
-state: &quot;State name&quot;
-country: &quot;Country name&quot;
-, street: &quot;Str...)">
-                  </a> <!-- testComparer(street: "Street name"
-city: "City name 1"
-state: "State name"
-country: "Country name"
-, street: "Str...) -->
+                  <a name="testComparer(bookId: 1
+name: &quot;Book name 1&quot;
+author: &quot;Author name 1&quot;
+status: BORROWED
+, bookId: 1
+author: &quot;Author n...)">
+                  </a> <!-- testComparer(bookId: 1
+name: "Book name 1"
+author: "Author name 1"
+status: BORROWED
+, bookId: 1
+author: "Author n...) -->
                   <span class="method-name">testComparer</span>
-                  <span class="parameters">(street: "Street name"
-city: "City name 1"
-state: "State name"
-country: "Country name"
-,street: "Street name"
-city: "City name 2"
-state: "State name"
-postal_code: "Postal code"
-,null,  Address: {
-    city: City name 1 => City name 2
-+   postal_code: Postal code
--   country: Country name
-  }
-)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testComparer(phoneNumbers: &quot;1234567890&quot;
-phoneNumbers: &quot;0987654321&quot;
-, phoneNumbers: &quot;0987654321&quot;
-phoneNumbers: &quot;98...)">
-                  </a> <!-- testComparer(phoneNumbers: "1234567890"
-phoneNumbers: "0987654321"
-, phoneNumbers: "0987654321"
-phoneNumbers: "98...) -->
-                  <span class="method-name">testComparer</span>
-                  <span class="parameters">(phoneNumbers: "1234567890"
-phoneNumbers: "0987654321"
-,phoneNumbers: "0987654321"
-phoneNumbers: "9876543210"
-,CompareOptions [messageVsKeyField={}, orderRepeatedMsgByField={Member.phoneNumbers=null}, excludeFields=[], redactionFields=[], protoMapper=null],  Member: {
-    phoneNumbers: [
-      phoneNumbers: 1234567890 => 9876543210
-    ]
+                  <span class="parameters">(bookId: 1
+name: "Book name 1"
+author: "Author name 1"
+status: BORROWED
+,bookId: 1
+author: "Author name 2"
+genre: "Genre name 1"
+,CompareOptions [messageVsKeyField={}, orderRepeatedMsgByField={}, excludeFields=[Book.status], redactionFields=[], protoMapper=null],  Book: {
+-   name: Book name 1
+    author: Author name 1 => Author name 2
++   genre: Genre name 1
   }
 )</span>
                 </div> <!-- method-content -->
@@ -371,52 +446,22 @@ phoneNumbers: "9876543210"
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="testComparer(borrowHistory {
-  bookId: 2
-  name: &quot;Book name 2&quot;
-  author: &quot;Author name 2&quot;
-  status: BORROWED
-}
-bor...)">
-                  </a> <!-- testComparer(borrowHistory {
-  bookId: 2
-  name: "Book name 2"
-  author: "Author name 2"
-  status: BORROWED
-}
-bor...) -->
+                  <a name="testComparer(phoneNumbers: &quot;1234567890&quot;
+phoneNumbers: &quot;0987654321&quot;
+, phoneNumbers: &quot;0987654321&quot;
+phoneNumbers: &quot;98...)">
+                  </a> <!-- testComparer(phoneNumbers: "1234567890"
+phoneNumbers: "0987654321"
+, phoneNumbers: "0987654321"
+phoneNumbers: "98...) -->
                   <span class="method-name">testComparer</span>
-                  <span class="parameters">(borrowHistory {
-  bookId: 2
-  name: "Book name 2"
-  author: "Author name 2"
-  status: BORROWED
-}
-borrowHistory {
-  bookId: 1
-  name: "Book name 1"
-  author: "Author name 1"
-  status: BORROWED
-}
-,borrowHistory {
-  bookId: 1
-  author: "Author name 2"
-  genre: "Genre name 1"
-}
-,CompareOptions [messageVsKeyField={}, orderRepeatedMsgByField={Member.borrowHistory=Book.bookId}, excludeFields=[], redactionFields=[], protoMapper=null],  Member: {
-    borrowHistory: [
-      borrowHistory: {
--       name: Book name 1
-        author: Author name 1 => Author name 2
-+       genre: Genre name 1
--       status: BORROWED
-      }
--     borrowHistory: {
--       bookId: 2
--       name: Book name 2
--       author: Author name 2
--       status: BORROWED
--     }
+                  <span class="parameters">(phoneNumbers: "1234567890"
+phoneNumbers: "0987654321"
+,phoneNumbers: "0987654321"
+phoneNumbers: "9876543210"
+,CompareOptions [messageVsKeyField={}, orderRepeatedMsgByField={Member.phoneNumbers=null}, excludeFields=[], redactionFields=[], protoMapper=null],  Member: {
+    phoneNumbers: [
+      phoneNumbers: 1234567890 => 9876543210
     ]
   }
 )</span>
@@ -427,7 +472,7 @@ borrowHistory {
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/private/var/folders/dc/kw3ll4h16l593j6myd2kj7vr0000gp/T/testng-eclipse--517247194/testng-customsuite.xml</span>
+            <span class="header-content">/private/var/folders/dc/kw3ll4h16l593j6myd2kj7vr0000gp/T/testng-eclipse-1574997068/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -480,36 +525,40 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(6);
+data.addRows(7);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testComparer')
 data.setCell(0, 2, 'com.jash.protokit.comparer.ProtoComparerTest')
-data.setCell(0, 3, 146);
+data.setCell(0, 3, 144);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'testComparer')
 data.setCell(1, 2, 'com.jash.protokit.comparer.ProtoComparerTest')
-data.setCell(1, 3, 47);
+data.setCell(1, 3, 34);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'testComparer')
 data.setCell(2, 2, 'com.jash.protokit.comparer.ProtoComparerTest')
-data.setCell(2, 3, 11);
+data.setCell(2, 3, 13);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'testComparer')
 data.setCell(3, 2, 'com.jash.protokit.comparer.ProtoComparerTest')
-data.setCell(3, 3, 5);
+data.setCell(3, 3, 10);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'testComparer')
 data.setCell(4, 2, 'com.jash.protokit.comparer.ProtoComparerTest')
-data.setCell(4, 3, 4);
+data.setCell(4, 3, 5);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'testComparer')
 data.setCell(5, 2, 'com.jash.protokit.comparer.ProtoComparerTest')
-data.setCell(5, 3, 2);
+data.setCell(5, 3, 4);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'testComparer')
+data.setCell(6, 2, 'com.jash.protokit.comparer.ProtoComparerTest')
+data.setCell(6, 3, 3);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 215 ms</span>
+              <span class="suite-total-time">Total running time: 213 ms</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -546,7 +595,7 @@ city: "City name 1"
 state: "State name"
 country: "Country name"
 , street: "Str...)</span>
-                <span class="method-start">94 ms</span>
+                <span class="method-start">103 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testComparer(borrowHistory {
@@ -556,21 +605,21 @@ country: "Country name"
 , borrowHistory {
   bookId: 1
   genre: "Genre ...)</span>
-                <span class="method-start">247 ms</span>
+                <span class="method-start">253 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testComparer(phoneNumbers: "1234567890"
 phoneNumbers: "0987654321"
 , phoneNumbers: "0987654321"
 phoneNumbers: "98...)</span>
-                <span class="method-start">261 ms</span>
+                <span class="method-start">266 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testComparer(phoneNumbers: "1234567890"
 phoneNumbers: "0987654321"
 , phoneNumbers: "0987654321"
 phoneNumbers: "98...)</span>
-                <span class="method-start">268 ms</span>
+                <span class="method-start">314 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testComparer(borrowHistory {
@@ -580,7 +629,7 @@ phoneNumbers: "98...)</span>
   status: BORROWED
 }
 bor...)</span>
-                <span class="method-start">312 ms</span>
+                <span class="method-start">336 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testComparer(borrowHistory {
@@ -590,7 +639,16 @@ bor...)</span>
   status: BORROWED
 }
 bor...)</span>
-                <span class="method-start">370 ms</span>
+                <span class="method-start">375 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testComparer(bookId: 1
+name: "Book name 1"
+author: "Author name 1"
+status: BORROWED
+, bookId: 1
+author: "Author n...)</span>
+                <span class="method-start">385 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -35,7 +35,7 @@ public class ProtoComparerTest {
 			factory.setFeature("http://xml.org/sax/features/external-general-entities", false);
 			factory.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
 			DocumentBuilder docBuilder = factory.newDocumentBuilder();
-			Document doc = docBuilder.parse(new File("src/test/resources/cases/merger.xml"));
+			Document doc = docBuilder.parse(new File("src/test/resources/cases/comparer.xml"));
 			doc.getDocumentElement().normalize();
 			NodeList cases = doc.getElementsByTagName("case");
 			for (int i = 0; i < cases.getLength(); i++) {
@@ -151,6 +151,20 @@ public class ProtoComparerTest {
 		return data;
 	}
 
+	public Object[] getExcludeFieldCase() {
+		String caseName = "excludeFieldCase";
+		Object[] data = new Object[4];
+		Book message1 = Book.newBuilder().setBookId(1).setName("Book name 1").setAuthor("Author name 1")
+				.setStatus(BookStatus.BORROWED).build();
+		Book message2 = Book.newBuilder().setBookId(1).setGenre("Genre name 1").setAuthor("Author name 2").build();
+		CompareOptions options = CompareOptions.Builder.newBuilder().addExcludeField("Book.status").build();
+		data[0] = message1;
+		data[1] = message2;
+		data[2] = options;
+		data[3] = expectedReportMap.get(caseName);
+		return data;
+	}
+
 	@DataProvider(name = "dataProvider")
 	public Object[][] dataProvider() {
 		List<Object[]> data = new ArrayList<>();
@@ -160,6 +174,7 @@ public class ProtoComparerTest {
 		data.add(getCompareRepeatedPrimCase2());
 		data.add(getCompareRepeatedMsgCase());
 		data.add(getComparedRepeatedMsgWithKeyFieldCase());
+		data.add(getExcludeFieldCase());
 		return data.toArray(new Object[data.size()][]);
 	}
 

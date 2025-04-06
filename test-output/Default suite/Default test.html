@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>6/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>7/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Apr 06 22:21:50 IST 2025</td>
+<td>Started on:</td><td>Sun Apr 06 22:33:19 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (442 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (455 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,111 +75,6 @@ function toggleAllBoxes() {
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
-<tr>
-<td title='com.jash.protokit.comparer.ProtoComparerTest.testComparer()'><b>testComparer</b><br>Test class: com.jash.protokit.comparer.ProtoComparerTest<br>Parameters: borrowHistory {
-  bookId: 2
-  name: "Book name 2"
-  author: "Author name 2"
-  status: BORROWED
-}
-borrowHistory {
-  bookId: 1
-  name: "Book name 1"
-  author: "Author name 1"
-  status: BORROWED
-}
-, borrowHistory {
-  bookId: 1
-  author: "Author name 2"
-  genre: "Genre name 1"
-}
-, CompareOptions [messageVsKeyField={class com.jash.protokit.LibraryManagement$Book=Book.bookId}, orderRepeatedMsgByField={Member.borrowHistory=Book.bookId}, excludeFields=[], redactionFields=[], protoMapper=null],   Member: {
-    borrowHistory: [
-      borrowHistory (1): {
--       name: Book name 1
-        author: Author name 1 => Author name 2
-+       genre: Genre name 1
--       status: BORROWED
-      }
--     borrowHistory: {
--       bookId: 2
--       name: Book name 2
--       author: Author name 2
--       status: BORROWED
--     }
-    ]
-  }
-</td>
-<td></td>
-<td>0</td>
-<td>com.jash.protokit.comparer.ProtoComparerTest@4a83a74a</td></tr>
-<tr>
-<td title='com.jash.protokit.comparer.ProtoComparerTest.testComparer()'><b>testComparer</b><br>Test class: com.jash.protokit.comparer.ProtoComparerTest<br>Parameters: street: "Street name"
-city: "City name 1"
-state: "State name"
-country: "Country name"
-, street: "Street name"
-city: "City name 2"
-state: "State name"
-postal_code: "Postal code"
-, null,   Address: {
-    city: City name 1 => City name 2
-+   postal_code: Postal code
--   country: Country name
-  }
-</td>
-<td></td>
-<td>0</td>
-<td>com.jash.protokit.comparer.ProtoComparerTest@4a83a74a</td></tr>
-<tr>
-<td title='com.jash.protokit.comparer.ProtoComparerTest.testComparer()'><b>testComparer</b><br>Test class: com.jash.protokit.comparer.ProtoComparerTest<br>Parameters: phoneNumbers: "1234567890"
-phoneNumbers: "0987654321"
-, phoneNumbers: "0987654321"
-phoneNumbers: "9876543210"
-, CompareOptions [messageVsKeyField={}, orderRepeatedMsgByField={Member.phoneNumbers=null}, excludeFields=[], redactionFields=[], protoMapper=null],   Member: {
-    phoneNumbers: [
-      phoneNumbers: 1234567890 => 9876543210
-    ]
-  }
-</td>
-<td></td>
-<td>0</td>
-<td>com.jash.protokit.comparer.ProtoComparerTest@4a83a74a</td></tr>
-<tr>
-<td title='com.jash.protokit.comparer.ProtoComparerTest.testComparer()'><b>testComparer</b><br>Test class: com.jash.protokit.comparer.ProtoComparerTest<br>Parameters: phoneNumbers: "1234567890"
-phoneNumbers: "0987654321"
-, phoneNumbers: "0987654321"
-phoneNumbers: "9876543210"
-, null,   Member: {
-    phoneNumbers: [
-      phoneNumbers: 1234567890 => 0987654321
-      phoneNumbers: 0987654321 => 9876543210
-    ]
-  }
-</td>
-<td></td>
-<td>0</td>
-<td>com.jash.protokit.comparer.ProtoComparerTest@4a83a74a</td></tr>
-<tr>
-<td title='com.jash.protokit.comparer.ProtoComparerTest.testComparer()'><b>testComparer</b><br>Test class: com.jash.protokit.comparer.ProtoComparerTest<br>Parameters: borrowHistory {
-  bookId: 1
-  genre: "Genre name 1"
-}
-, borrowHistory {
-  bookId: 1
-  genre: "Genre name 2"
-}
-, CompareOptions [messageVsKeyField={class com.jash.protokit.LibraryManagement$Book=Book.bookId}, orderRepeatedMsgByField={}, excludeFields=[], redactionFields=[], protoMapper=null],   Member: {
-    borrowHistory: [
-      borrowHistory (1): {
-        genre: Genre name 1 => Genre name 2
-      }
-    ]
-  }
-</td>
-<td></td>
-<td>0</td>
-<td>com.jash.protokit.comparer.ProtoComparerTest@4a83a74a</td></tr>
 <tr>
 <td title='com.jash.protokit.comparer.ProtoComparerTest.testComparer()'><b>testComparer</b><br>Test class: com.jash.protokit.comparer.ProtoComparerTest<br>Parameters: borrowHistory {
   bookId: 2
@@ -217,7 +112,129 @@ borrowHistory {
 </td>
 <td></td>
 <td>0</td>
-<td>com.jash.protokit.comparer.ProtoComparerTest@4a83a74a</td></tr>
+<td>com.jash.protokit.comparer.ProtoComparerTest@1349883</td></tr>
+<tr>
+<td title='com.jash.protokit.comparer.ProtoComparerTest.testComparer()'><b>testComparer</b><br>Test class: com.jash.protokit.comparer.ProtoComparerTest<br>Parameters: street: "Street name"
+city: "City name 1"
+state: "State name"
+country: "Country name"
+, street: "Street name"
+city: "City name 2"
+state: "State name"
+postal_code: "Postal code"
+, null,   Address: {
+    city: City name 1 => City name 2
++   postal_code: Postal code
+-   country: Country name
+  }
+</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.comparer.ProtoComparerTest@1349883</td></tr>
+<tr>
+<td title='com.jash.protokit.comparer.ProtoComparerTest.testComparer()'><b>testComparer</b><br>Test class: com.jash.protokit.comparer.ProtoComparerTest<br>Parameters: borrowHistory {
+  bookId: 2
+  name: "Book name 2"
+  author: "Author name 2"
+  status: BORROWED
+}
+borrowHistory {
+  bookId: 1
+  name: "Book name 1"
+  author: "Author name 1"
+  status: BORROWED
+}
+, borrowHistory {
+  bookId: 1
+  author: "Author name 2"
+  genre: "Genre name 1"
+}
+, CompareOptions [messageVsKeyField={class com.jash.protokit.LibraryManagement$Book=Book.bookId}, orderRepeatedMsgByField={Member.borrowHistory=Book.bookId}, excludeFields=[], redactionFields=[], protoMapper=null],   Member: {
+    borrowHistory: [
+      borrowHistory (1): {
+-       name: Book name 1
+        author: Author name 1 => Author name 2
++       genre: Genre name 1
+-       status: BORROWED
+      }
+-     borrowHistory: {
+-       bookId: 2
+-       name: Book name 2
+-       author: Author name 2
+-       status: BORROWED
+-     }
+    ]
+  }
+</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.comparer.ProtoComparerTest@1349883</td></tr>
+<tr>
+<td title='com.jash.protokit.comparer.ProtoComparerTest.testComparer()'><b>testComparer</b><br>Test class: com.jash.protokit.comparer.ProtoComparerTest<br>Parameters: bookId: 1
+name: "Book name 1"
+author: "Author name 1"
+status: BORROWED
+, bookId: 1
+author: "Author name 2"
+genre: "Genre name 1"
+, CompareOptions [messageVsKeyField={}, orderRepeatedMsgByField={}, excludeFields=[Book.status], redactionFields=[], protoMapper=null],   Book: {
+-   name: Book name 1
+    author: Author name 1 => Author name 2
++   genre: Genre name 1
+  }
+</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.comparer.ProtoComparerTest@1349883</td></tr>
+<tr>
+<td title='com.jash.protokit.comparer.ProtoComparerTest.testComparer()'><b>testComparer</b><br>Test class: com.jash.protokit.comparer.ProtoComparerTest<br>Parameters: phoneNumbers: "1234567890"
+phoneNumbers: "0987654321"
+, phoneNumbers: "0987654321"
+phoneNumbers: "9876543210"
+, null,   Member: {
+    phoneNumbers: [
+      phoneNumbers: 1234567890 => 0987654321
+      phoneNumbers: 0987654321 => 9876543210
+    ]
+  }
+</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.comparer.ProtoComparerTest@1349883</td></tr>
+<tr>
+<td title='com.jash.protokit.comparer.ProtoComparerTest.testComparer()'><b>testComparer</b><br>Test class: com.jash.protokit.comparer.ProtoComparerTest<br>Parameters: borrowHistory {
+  bookId: 1
+  genre: "Genre name 1"
+}
+, borrowHistory {
+  bookId: 1
+  genre: "Genre name 2"
+}
+, CompareOptions [messageVsKeyField={class com.jash.protokit.LibraryManagement$Book=Book.bookId}, orderRepeatedMsgByField={}, excludeFields=[], redactionFields=[], protoMapper=null],   Member: {
+    borrowHistory: [
+      borrowHistory (1): {
+        genre: Genre name 1 => Genre name 2
+      }
+    ]
+  }
+</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.comparer.ProtoComparerTest@1349883</td></tr>
+<tr>
+<td title='com.jash.protokit.comparer.ProtoComparerTest.testComparer()'><b>testComparer</b><br>Test class: com.jash.protokit.comparer.ProtoComparerTest<br>Parameters: phoneNumbers: "1234567890"
+phoneNumbers: "0987654321"
+, phoneNumbers: "0987654321"
+phoneNumbers: "9876543210"
+, CompareOptions [messageVsKeyField={}, orderRepeatedMsgByField={Member.phoneNumbers=null}, excludeFields=[], redactionFields=[], protoMapper=null],   Member: {
+    phoneNumbers: [
+      phoneNumbers: 1234567890 => 9876543210
+    ]
+  }
+</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.comparer.ProtoComparerTest@1349883</td></tr>
 </table><p>
 </body>
 </html>
