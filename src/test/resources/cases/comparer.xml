@@ -88,4 +88,14 @@
 			<line>  }</line>
 		</expected>
 	</case>
+	<case name="redactFieldCase">
+		<expected>
+			<line>  Book: {</line>
+			<line>-   name: Book name 1</line>
+			<line>+   author: ****</line>
+			<line>+   genre: Genre name 1</line>
+			<line>-   status: BORROWED</line>
+			<line>  }</line>
+		</expected>
+	</case>
 </cases>

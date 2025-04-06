@@ -151,13 +151,26 @@ public class ProtoComparerTest {
 		return data;
 	}
 
-	public Object[] getExcludeFieldCase() {
+	private Object[] getExcludeFieldCase() {
 		String caseName = "excludeFieldCase";
 		Object[] data = new Object[4];
 		Book message1 = Book.newBuilder().setBookId(1).setName("Book name 1").setAuthor("Author name 1")
 				.setStatus(BookStatus.BORROWED).build();
 		Book message2 = Book.newBuilder().setBookId(1).setGenre("Genre name 1").setAuthor("Author name 2").build();
 		CompareOptions options = CompareOptions.Builder.newBuilder().addExcludeField("Book.status").build();
+		data[0] = message1;
+		data[1] = message2;
+		data[2] = options;
+		data[3] = expectedReportMap.get(caseName);
+		return data;
+	}
+
+	private Object[] getRedactFieldCase() {
+		String caseName = "redactFieldCase";
+		Object[] data = new Object[4];
+		Book message1 = Book.newBuilder().setBookId(1).setName("Book name 1").setStatus(BookStatus.BORROWED).build();
+		Book message2 = Book.newBuilder().setBookId(1).setGenre("Genre name 1").setAuthor("Author name 2").build();
+		CompareOptions options = CompareOptions.Builder.newBuilder().addRedactionField("Book.author").build();
 		data[0] = message1;
 		data[1] = message2;
 		data[2] = options;
@@ -175,6 +188,7 @@ public class ProtoComparerTest {
 		data.add(getCompareRepeatedMsgCase());
 		data.add(getComparedRepeatedMsgWithKeyFieldCase());
 		data.add(getExcludeFieldCase());
+		data.add(getRedactFieldCase());
 		return data.toArray(new Object[data.size()][]);
 	}
 
