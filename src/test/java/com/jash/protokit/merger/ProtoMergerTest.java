@@ -32,7 +32,7 @@ public class ProtoMergerTest {
 		return data;
 	}
 
-	private Object[] getPrimitiveResolverCase(Resolver resolver) {
+	private Object[] getResolverCase1(Resolver resolver) {
 		Object[] data = new Object[5];
 		Member message1 = Member.newBuilder().setMemberId(1).setBooksOnHold(5).build();
 		Member message2 = Member.newBuilder().setMemberId(1).setBooksOnHold(10).build();
@@ -56,8 +56,47 @@ public class ProtoMergerTest {
 			break;
 		}
 		Member expected = Member.newBuilder().setMemberId(1).setBooksOnHold(expectedBooksOnHold).build();
+		MergeOptions options = MergeOptions.Builder.newBuilder().setConflictResolver("Member.booksOnHold", resolver)
+				.build();
+		data[0] = message1;
+		data[1] = message2;
+		data[2] = options;
+		data[3] = expected;
+		data[4] = expected;
+		return data;
+	}
+
+	private Object[] getResolverCase2(Resolver resolver) {
+		Object[] data = new Object[5];
+		Book book11 = Book.newBuilder().setBookId(1).setPrice(1000).build();
+		Book book12 = Book.newBuilder().setBookId(1).setPrice(1500).build();
+		Book book2 = Book.newBuilder().setBookId(2).setPrice(2000).build();
+		Member message1 = Member.newBuilder().setMemberId(1).addBorrowHistory(book2).addBorrowHistory(book12).build();
+		Member message2 = Member.newBuilder().setMemberId(1).addBorrowHistory(book11).build();
+		int expectedPrice = 1000;
+		switch (resolver) {
+		case GREATER:
+			expectedPrice = 1500;
+			break;
+		case LESSER:
+			expectedPrice = 1000;
+			break;
+		case FIRST:
+			expectedPrice = 1500;
+			break;
+		case SECOND:
+			expectedPrice = 1000;
+			break;
+		case DEFAULT:
+			expectedPrice = 0;
+		default:
+			break;
+		}
+		Book book1 = Book.newBuilder().setBookId(1).setPrice(expectedPrice).build();
+		Member expected = Member.newBuilder().setMemberId(1).addBorrowHistory(book1).addBorrowHistory(book2).build();
 		MergeOptions options = MergeOptions.Builder.newBuilder()
-				.setPrimitiveConflictResolver("Member.booksOnHold", resolver).build();
+				.setMergeRepeatedByField("Member.borrowHistory", "Book.bookId")
+				.setConflictResolver("Book.price", resolver).build();
 		data[0] = message1;
 		data[1] = message2;
 		data[2] = options;
@@ -133,7 +172,8 @@ public class ProtoMergerTest {
 		List<Object[]> data = new ArrayList<>();
 		data.add(getMergeMissingFieldsCase());
 		for (Resolver resolver : Resolver.values()) {
-			data.add(getPrimitiveResolverCase(resolver));
+			data.add(getResolverCase1(resolver));
+			data.add(getResolverCase2(resolver));
 		}
 		data.add(getExcludeFieldCase());
 		data.add(getPrimitiveRepeatedCase());

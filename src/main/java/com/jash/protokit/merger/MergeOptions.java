@@ -19,18 +19,18 @@ public class MergeOptions {
 
 	protected static final MergeOptions DUMMY_OPTIONS = new MergeOptions(Builder.newBuilder());
 
-	private Map<String, Resolver> primitiveConflictResolver;
+	private Map<String, Resolver> conflictResolver;
 	private Map<String, String> mergeRepeatedByField;
 	private List<String> excludeFields;
 
 	private MergeOptions(Builder builder) {
-		primitiveConflictResolver = builder.primitiveConflictResolver;
+		conflictResolver = builder.conflictResolver;
 		mergeRepeatedByField = builder.mergeRepeatedByField;
 		excludeFields = builder.excludeFields;
 	}
 
 	protected Resolver getResolverForField(String fieldFullName) {
-		return primitiveConflictResolver.get(UtilAdapter.getFieldName(fieldFullName));
+		return conflictResolver.get(UtilAdapter.getFieldName(fieldFullName));
 	}
 
 	protected boolean shouldMergeRepeatedField(String fieldFullName) {
@@ -47,7 +47,7 @@ public class MergeOptions {
 
 	@Override
 	public String toString() {
-		return "MergeOptions [primitiveConflictResolver=" + primitiveConflictResolver + ", mergeRepeatedByField="
+		return "MergeOptions [conflictResolver=" + conflictResolver + ", mergeRepeatedByField="
 				+ mergeRepeatedByField + ", excludeFields=" + excludeFields + "]";
 	}
 
@@ -56,12 +56,12 @@ public class MergeOptions {
 	 */
 	public static class Builder {
 
-		private Map<String, Resolver> primitiveConflictResolver;
+		private Map<String, Resolver> conflictResolver;
 		private Map<String, String> mergeRepeatedByField;
 		private List<String> excludeFields;
 
 		private Builder() {
-			primitiveConflictResolver = new HashMap<>();
+			conflictResolver = new HashMap<>();
 			mergeRepeatedByField = new HashMap<>();
 			excludeFields = new ArrayList<>();
 		}
@@ -76,36 +76,36 @@ public class MergeOptions {
 		}
 
 		/**
-		 * Add a resolver for a primitive field in case of conflict. Resolver will be
-		 * used in cases of (objA, null), (null, objB) and (objA, objB) where objA !=
-		 * objB. Certain resolvers may not be applicable for some situations even if
-		 * they are among these three cases like comparator type resolver when one of
-		 * the objects is null.
+		 * Add a resolver for a field in case of conflict. Resolver will be used in
+		 * cases of (objA, null), (null, objB) and (objA, objB) where objA != objB.
+		 * Certain resolvers may not be applicable for some situations even if they are
+		 * among these three cases like comparator type resolver when one of the objects
+		 * is null.
 		 * 
 		 * @param field    - Conflicting field. Field format should be like
 		 *                 "EncasingMessage.fieldName". E.g.: "SampleMessage.primField"
 		 * @param resolver - Resolver type to use in case of conflict.
 		 * @return The current instance of {@link Builder}.
 		 */
-		public Builder setPrimitiveConflictResolver(String field, Resolver resolver) {
-			primitiveConflictResolver.put(field, resolver);
+		public Builder setConflictResolver(String field, Resolver resolver) {
+			conflictResolver.put(field, resolver);
 			return this;
 		}
 
 		/**
-		 * Add resolvers for multiple primitive fields in case of conflict. Resolver
-		 * will be used in cases of (objA, null), (null, objB) and (objA, objB) where
-		 * objA != objB. Certain resolvers may not be applicable for some situations
-		 * even if they are among these three cases like comparator type resolver when
-		 * one of the objects is null.
+		 * Add resolvers for multiple fields in case of conflict. Resolver will be used
+		 * in cases of (objA, null), (null, objB) and (objA, objB) where objA != objB.
+		 * Certain resolvers may not be applicable for some situations even if they are
+		 * among these three cases like comparator type resolver when one of the objects
+		 * is null or of type {@link Message}.
 		 * 
 		 * @param fieldVsResolver - Map of field vs resolver. Field format should be
 		 *                        like "EncasingMessage.fieldName". E.g.:
 		 *                        "SampleMessage.primField"
 		 * @return The current instance of {@link Builder}.
 		 */
-		public Builder setAllPrimitiveConflictResolvers(Map<String, Resolver> fieldVsResolver) {
-			primitiveConflictResolver.putAll(fieldVsResolver);
+		public Builder setAllConflictResolvers(Map<String, Resolver> fieldVsResolver) {
+			conflictResolver.putAll(fieldVsResolver);
 			return this;
 		}
 
@@ -168,8 +168,8 @@ public class MergeOptions {
 		/**
 		 * Get field vs resolvers map for merge.
 		 */
-		public Map<String, Resolver> getPrimitiveConflictResolver() {
-			return primitiveConflictResolver;
+		public Map<String, Resolver> getConflictResolver() {
+			return conflictResolver;
 		}
 
 		/**

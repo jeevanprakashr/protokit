@@ -35,7 +35,8 @@ message Book {
 	string name = 2;
 	string author = 3;
 	string genre = 4;
-	BookStatus status = 5;
+	int32 price = 5;
+	BookStatus status = 6;
 }
 
 message Member {

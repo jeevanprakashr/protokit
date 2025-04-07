@@ -98,4 +98,29 @@
 			<line>  }</line>
 		</expected>
 	</case>
+	<case name="protoMapperCase1">
+		<expected>
+			<line>  Member: {</line>
+			<line>    borrowHistory: [</line>
+			<line>      borrowHistory: {</line>
+			<line>-       name: Book name 1</line>
+			<line>        author: Author name 1 (Author First) => Author name 2 (Author Second)</line>
+			<line>+       genre: Genre name 1</line>
+			<line>      }</line>
+			<line>    ]</line>
+			<line>  }</line>
+		</expected>
+	</case>
+	<case name="protoMapperCase2">
+		<expected>
+			<line>  Member: {</line>
+			<line>    borrowHistory: [</line>
+			<line>      borrowHistory: {</line>
+			<line>-       name: Book name 1</line>
+			<line>+       genre: Genre name 1</line>
+			<line>      }</line>
+			<line>    ]</line>
+			<line>  }</line>
+		</expected>
+	</case>
 </cases>

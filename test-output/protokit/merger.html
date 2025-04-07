@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>merger</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>13/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>27/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Apr 02 23:11:00 IST 2025</td>
+<td>Started on:</td><td>Mon Apr 07 23:47:22 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (554 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (685 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -80,7 +80,57 @@ function toggleAllBoxes() {
 booksOnHold: 5
 , memberId: 1
 booksOnHold: 10
-, MergeOptions [primitiveConflictResolver={Member.booksOnHold=GREATER}, mergeRepeatedByField={}, excludeFields=[]], memberId: 1
+, MergeOptions [conflictResolver={Member.booksOnHold=FIRST}, mergeRepeatedByField={}, excludeFields=[]], memberId: 1
+booksOnHold: 5
+, memberId: 1
+booksOnHold: 5
+</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.merger.ProtoMergerTest@8f2ef19</td></tr>
+<tr>
+<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: memberId: 1
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
+borrowHistory {
+  bookId: 1
+  price: 1500
+}
+, memberId: 1
+borrowHistory {
+  bookId: 1
+  price: 1000
+}
+, MergeOptions [conflictResolver={Book.price=LESSER}, mergeRepeatedByField={Member.borrowHistory=Book.bookId}, excludeFields=[]], memberId: 1
+borrowHistory {
+  bookId: 1
+  price: 1000
+}
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
+, memberId: 1
+borrowHistory {
+  bookId: 1
+  price: 1000
+}
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
+</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.merger.ProtoMergerTest@8f2ef19</td></tr>
+<tr>
+<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: memberId: 1
+booksOnHold: 5
+, memberId: 1
+booksOnHold: 10
+, MergeOptions [conflictResolver={Member.booksOnHold=GREATER}, mergeRepeatedByField={}, excludeFields=[]], memberId: 1
 booksOnHold: 10
 , memberId: 1
 booksOnHold: 10
@@ -88,6 +138,194 @@ booksOnHold: 10
 <td></td>
 <td>0</td>
 <td>com.jash.protokit.merger.ProtoMergerTest@8f2ef19</td></tr>
+<tr>
+<td title='com.jash.protokit.comparer.ProtoComparerTest.testComparer()'><b>testComparer</b><br>Test class: com.jash.protokit.comparer.ProtoComparerTest<br>Parameters: bookId: 1
+name: "Book name 1"
+status: BORROWED
+, bookId: 1
+author: "Author name 2"
+genre: "Genre name 1"
+, CompareOptions [messageVsKeyField={}, orderRepeatedMsgByField={}, excludeFields=[], redactionFields=[Book.author], protoMapper=null],   Book: {
+-   name: Book name 1
++   author: ****
++   genre: Genre name 1
+-   status: BORROWED
+  }
+</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.comparer.ProtoComparerTest@3ba987b8</td></tr>
+<tr>
+<td title='com.jash.protokit.simplifier.ProtoSimplifierTest.testSimplifier()'><b>testSimplifier</b><br>Test class: com.jash.protokit.simplifier.ProtoSimplifierTest<br>Parameters: street: "Street name"
+city: "City name"
+state: "State name"
+postal_code: "Postal code"
+5: "Country name"
+, street: "Street name"
+city: "City name"
+state: "State name"
+postal_code: "Postal code"
+, null</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.simplifier.ProtoSimplifierTest@f0c8a99</td></tr>
+<tr>
+<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: memberId: 1
+booksOnHold: 5
+, memberId: 1
+booksOnHold: 10
+, MergeOptions [conflictResolver={Member.booksOnHold=DEFAULT}, mergeRepeatedByField={}, excludeFields=[]], memberId: 1
+, memberId: 1
+</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.merger.ProtoMergerTest@8f2ef19</td></tr>
+<tr>
+<td title='com.jash.protokit.comparer.ProtoComparerTest.testComparer()'><b>testComparer</b><br>Test class: com.jash.protokit.comparer.ProtoComparerTest<br>Parameters: bookId: 1
+name: "Book name 1"
+author: "Author name 1"
+status: BORROWED
+, bookId: 1
+author: "Author name 2"
+genre: "Genre name 1"
+, CompareOptions [messageVsKeyField={}, orderRepeatedMsgByField={}, excludeFields=[Book.status], redactionFields=[], protoMapper=null],   Book: {
+-   name: Book name 1
+    author: Author name 1 => Author name 2
++   genre: Genre name 1
+  }
+</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.comparer.ProtoComparerTest@3ba987b8</td></tr>
+<tr>
+<td title='com.jash.protokit.comparer.ProtoComparerTest.testComparer()'><b>testComparer</b><br>Test class: com.jash.protokit.comparer.ProtoComparerTest<br>Parameters: borrowHistory {
+  bookId: 1
+  name: "Book name 1"
+  author: "Author name 1"
+}
+, borrowHistory {
+  bookId: 1
+  author: "Author name 2"
+  genre: "Genre name 1"
+}
+, CompareOptions [messageVsKeyField={}, orderRepeatedMsgByField={}, excludeFields=[], redactionFields=[], protoMapper=ProtoMapper [fieldVsMapper fields=[Book.author], useMappedValue=true]],   Member: {
+    borrowHistory: [
+      borrowHistory: {
+-       name: Book name 1
++       genre: Genre name 1
+      }
+    ]
+  }
+</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.comparer.ProtoComparerTest@3ba987b8</td></tr>
+<tr>
+<td title='com.jash.protokit.comparer.ProtoComparerTest.testComparer()'><b>testComparer</b><br>Test class: com.jash.protokit.comparer.ProtoComparerTest<br>Parameters: borrowHistory {
+  bookId: 1
+  genre: "Genre name 1"
+}
+, borrowHistory {
+  bookId: 1
+  genre: "Genre name 2"
+}
+, CompareOptions [messageVsKeyField={class com.jash.protokit.LibraryManagement$Book=Book.bookId}, orderRepeatedMsgByField={}, excludeFields=[], redactionFields=[], protoMapper=null],   Member: {
+    borrowHistory: [
+      borrowHistory (1): {
+        genre: Genre name 1 => Genre name 2
+      }
+    ]
+  }
+</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.comparer.ProtoComparerTest@3ba987b8</td></tr>
+<tr>
+<td title='com.jash.protokit.comparer.ProtoComparerTest.testComparer()'><b>testComparer</b><br>Test class: com.jash.protokit.comparer.ProtoComparerTest<br>Parameters: borrowHistory {
+  bookId: 2
+  name: "Book name 2"
+  author: "Author name 2"
+  status: BORROWED
+}
+borrowHistory {
+  bookId: 1
+  name: "Book name 1"
+  author: "Author name 1"
+  status: BORROWED
+}
+, borrowHistory {
+  bookId: 1
+  author: "Author name 2"
+  genre: "Genre name 1"
+}
+, CompareOptions [messageVsKeyField={class com.jash.protokit.LibraryManagement$Book=Book.bookId}, orderRepeatedMsgByField={Member.borrowHistory=Book.bookId}, excludeFields=[], redactionFields=[], protoMapper=null],   Member: {
+    borrowHistory: [
+      borrowHistory (1): {
+-       name: Book name 1
+        author: Author name 1 => Author name 2
++       genre: Genre name 1
+-       status: BORROWED
+      }
+-     borrowHistory: {
+-       bookId: 2
+-       name: Book name 2
+-       author: Author name 2
+-       status: BORROWED
+-     }
+    ]
+  }
+</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.comparer.ProtoComparerTest@3ba987b8</td></tr>
+<tr>
+<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: memberId: 1
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
+borrowHistory {
+  bookId: 1
+  price: 1500
+}
+, memberId: 1
+borrowHistory {
+  bookId: 1
+  price: 1000
+}
+, MergeOptions [conflictResolver={Book.price=DEFAULT}, mergeRepeatedByField={Member.borrowHistory=Book.bookId}, excludeFields=[]], memberId: 1
+borrowHistory {
+  bookId: 1
+}
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
+, memberId: 1
+borrowHistory {
+  bookId: 1
+}
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
+</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.merger.ProtoMergerTest@8f2ef19</td></tr>
+<tr>
+<td title='com.jash.protokit.simplifier.ProtoSimplifierTest.testSimplifier()'><b>testSimplifier</b><br>Test class: com.jash.protokit.simplifier.ProtoSimplifierTest<br>Parameters: street: "Street name"
+city: "City name"
+state: "State name"
+postal_code: "Postal code"
+country: "Country name"
+, street: "Street name"
+city: "City name"
+state: "State name"
+, SimplifyOptions [dropFields=[Address.postal_code, Address.country]]</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.simplifier.ProtoSimplifierTest@f0c8a99</td></tr>
 <tr>
 <td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: bookId: 1
 status: BORROWED
@@ -104,6 +342,98 @@ name: "Book name"
 author: "Author name"
 genre: "Genre name"
 status: BORROWED
+</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.merger.ProtoMergerTest@8f2ef19</td></tr>
+<tr>
+<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: memberId: 1
+booksOnHold: 5
+, memberId: 1
+booksOnHold: 10
+, MergeOptions [conflictResolver={Member.booksOnHold=LESSER}, mergeRepeatedByField={}, excludeFields=[]], memberId: 1
+booksOnHold: 5
+, memberId: 1
+booksOnHold: 5
+</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.merger.ProtoMergerTest@8f2ef19</td></tr>
+<tr>
+<td title='com.jash.protokit.comparer.ProtoComparerTest.testComparer()'><b>testComparer</b><br>Test class: com.jash.protokit.comparer.ProtoComparerTest<br>Parameters: borrowHistory {
+  bookId: 1
+  name: "Book name 1"
+  author: "Author name 1"
+}
+, borrowHistory {
+  bookId: 1
+  author: "Author name 2"
+  genre: "Genre name 1"
+}
+, CompareOptions [messageVsKeyField={}, orderRepeatedMsgByField={}, excludeFields=[], redactionFields=[], protoMapper=ProtoMapper [fieldVsMapper fields=[Book.author], useMappedValue=false]],   Member: {
+    borrowHistory: [
+      borrowHistory: {
+-       name: Book name 1
+        author: Author name 1 (Author First) => Author name 2 (Author Second)
++       genre: Genre name 1
+      }
+    ]
+  }
+</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.comparer.ProtoComparerTest@3ba987b8</td></tr>
+<tr>
+<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: memberId: 1
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
+borrowHistory {
+  bookId: 1
+  price: 1500
+}
+, memberId: 1
+borrowHistory {
+  bookId: 1
+  price: 1000
+}
+, MergeOptions [conflictResolver={Book.price=FIRST}, mergeRepeatedByField={Member.borrowHistory=Book.bookId}, excludeFields=[]], memberId: 1
+borrowHistory {
+  bookId: 1
+  price: 1500
+}
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
+, memberId: 1
+borrowHistory {
+  bookId: 1
+  price: 1500
+}
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
+</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.merger.ProtoMergerTest@8f2ef19</td></tr>
+<tr>
+<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: phoneNumbers: "1234567890"
+phoneNumbers: "0987654321"
+, phoneNumbers: "0987654321"
+phoneNumbers: "9876543210"
+phoneNumbers: "8765432109"
+, MergeOptions [conflictResolver={}, mergeRepeatedByField={Member.phoneNumbers=null}, excludeFields=[]], phoneNumbers: "1234567890"
+phoneNumbers: "0987654321"
+phoneNumbers: "9876543210"
+phoneNumbers: "8765432109"
+, phoneNumbers: "0987654321"
+phoneNumbers: "9876543210"
+phoneNumbers: "8765432109"
+phoneNumbers: "1234567890"
 </td>
 <td></td>
 <td>0</td>
@@ -132,7 +462,7 @@ borrowHistory {
   genre: "Genre name 3"
   status: BORROWED
 }
-, MergeOptions [primitiveConflictResolver={}, mergeRepeatedByField={Member.borrowHistory=Book.bookId}, excludeFields=[]], borrowHistory {
+, MergeOptions [conflictResolver={}, mergeRepeatedByField={Member.borrowHistory=Book.bookId}, excludeFields=[]], borrowHistory {
   bookId: 1
   name: "Book name"
   author: "Author name"
@@ -177,51 +507,12 @@ borrowHistory {
 <td>0</td>
 <td>com.jash.protokit.merger.ProtoMergerTest@8f2ef19</td></tr>
 <tr>
-<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: memberId: 1
-booksOnHold: 5
-, memberId: 1
-booksOnHold: 10
-, MergeOptions [primitiveConflictResolver={Member.booksOnHold=SECOND}, mergeRepeatedByField={}, excludeFields=[]], memberId: 1
-booksOnHold: 10
-, memberId: 1
-booksOnHold: 10
-</td>
-<td></td>
-<td>0</td>
-<td>com.jash.protokit.merger.ProtoMergerTest@8f2ef19</td></tr>
-<tr>
-<td title='com.jash.protokit.simplifier.ProtoSimplifierTest.testSimplifier()'><b>testSimplifier</b><br>Test class: com.jash.protokit.simplifier.ProtoSimplifierTest<br>Parameters: street: "Street name"
-city: "City name"
-state: "State name"
-postal_code: "Postal code"
-country: "Country name"
-, street: "Street name"
-city: "City name"
-state: "State name"
-, SimplifyOptions [dropFields=[Address.postal_code, Address.country]]</td>
-<td></td>
-<td>0</td>
-<td>com.jash.protokit.simplifier.ProtoSimplifierTest@f0c8a99</td></tr>
-<tr>
-<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: memberId: 1
-booksOnHold: 5
-, memberId: 1
-booksOnHold: 10
-, MergeOptions [primitiveConflictResolver={Member.booksOnHold=FIRST}, mergeRepeatedByField={}, excludeFields=[]], memberId: 1
-booksOnHold: 5
-, memberId: 1
-booksOnHold: 5
-</td>
-<td></td>
-<td>0</td>
-<td>com.jash.protokit.merger.ProtoMergerTest@8f2ef19</td></tr>
-<tr>
 <td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: street: "Street name"
 state: "State name"
 postal_code: "Postal code"
 , city: "City name"
 country: "Country name"
-, MergeOptions [primitiveConflictResolver={}, mergeRepeatedByField={}, excludeFields=[Address.country]], street: "Street name"
+, MergeOptions [conflictResolver={}, mergeRepeatedByField={}, excludeFields=[Address.country]], street: "Street name"
 city: "City name"
 state: "State name"
 postal_code: "Postal code"
@@ -234,6 +525,21 @@ country: "Country name"
 <td></td>
 <td>0</td>
 <td>com.jash.protokit.merger.ProtoMergerTest@8f2ef19</td></tr>
+<tr>
+<td title='com.jash.protokit.comparer.ProtoComparerTest.testComparer()'><b>testComparer</b><br>Test class: com.jash.protokit.comparer.ProtoComparerTest<br>Parameters: phoneNumbers: "1234567890"
+phoneNumbers: "0987654321"
+, phoneNumbers: "0987654321"
+phoneNumbers: "9876543210"
+, null,   Member: {
+    phoneNumbers: [
+      phoneNumbers: 1234567890 => 0987654321
+      phoneNumbers: 0987654321 => 9876543210
+    ]
+  }
+</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.comparer.ProtoComparerTest@3ba987b8</td></tr>
 <tr>
 <td title='com.jash.protokit.comparer.ProtoComparerTest.testComparer()'><b>testComparer</b><br>Test class: com.jash.protokit.comparer.ProtoComparerTest<br>Parameters: street: "Street name"
 city: "City name 1"
@@ -257,10 +563,10 @@ postal_code: "Postal code"
 booksOnHold: 5
 , memberId: 1
 booksOnHold: 10
-, MergeOptions [primitiveConflictResolver={Member.booksOnHold=LESSER}, mergeRepeatedByField={}, excludeFields=[]], memberId: 1
-booksOnHold: 5
+, MergeOptions [conflictResolver={Member.booksOnHold=SECOND}, mergeRepeatedByField={}, excludeFields=[]], memberId: 1
+booksOnHold: 10
 , memberId: 1
-booksOnHold: 5
+booksOnHold: 10
 </td>
 <td></td>
 <td>0</td>
@@ -278,47 +584,130 @@ genre: "Genre name"
 <td>com.jash.protokit.simplifier.ProtoSimplifierTest@f0c8a99</td></tr>
 <tr>
 <td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: memberId: 1
-booksOnHold: 5
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
+borrowHistory {
+  bookId: 1
+  price: 1500
+}
 , memberId: 1
-booksOnHold: 10
-, MergeOptions [primitiveConflictResolver={Member.booksOnHold=DEFAULT}, mergeRepeatedByField={}, excludeFields=[]], memberId: 1
+borrowHistory {
+  bookId: 1
+  price: 1000
+}
+, MergeOptions [conflictResolver={Book.price=GREATER}, mergeRepeatedByField={Member.borrowHistory=Book.bookId}, excludeFields=[]], memberId: 1
+borrowHistory {
+  bookId: 1
+  price: 1500
+}
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
 , memberId: 1
+borrowHistory {
+  bookId: 1
+  price: 1500
+}
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
 </td>
 <td></td>
 <td>0</td>
 <td>com.jash.protokit.merger.ProtoMergerTest@8f2ef19</td></tr>
 <tr>
-<td title='com.jash.protokit.simplifier.ProtoSimplifierTest.testSimplifier()'><b>testSimplifier</b><br>Test class: com.jash.protokit.simplifier.ProtoSimplifierTest<br>Parameters: street: "Street name"
-city: "City name"
-state: "State name"
-postal_code: "Postal code"
-5: "Country name"
-, street: "Street name"
-city: "City name"
-state: "State name"
-postal_code: "Postal code"
-, null</td>
-<td></td>
-<td>0</td>
-<td>com.jash.protokit.simplifier.ProtoSimplifierTest@f0c8a99</td></tr>
-<tr>
-<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: phoneNumbers: "1234567890"
-phoneNumbers: "0987654321"
-, phoneNumbers: "0987654321"
-phoneNumbers: "9876543210"
-phoneNumbers: "8765432109"
-, MergeOptions [primitiveConflictResolver={}, mergeRepeatedByField={Member.phoneNumbers=null}, excludeFields=[]], phoneNumbers: "1234567890"
-phoneNumbers: "0987654321"
-phoneNumbers: "9876543210"
-phoneNumbers: "8765432109"
-, phoneNumbers: "0987654321"
-phoneNumbers: "9876543210"
-phoneNumbers: "8765432109"
-phoneNumbers: "1234567890"
+<td title='com.jash.protokit.merger.ProtoMergerTest.testMerger()'><b>testMerger</b><br>Test class: com.jash.protokit.merger.ProtoMergerTest<br>Parameters: memberId: 1
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
+borrowHistory {
+  bookId: 1
+  price: 1500
+}
+, memberId: 1
+borrowHistory {
+  bookId: 1
+  price: 1000
+}
+, MergeOptions [conflictResolver={Book.price=SECOND}, mergeRepeatedByField={Member.borrowHistory=Book.bookId}, excludeFields=[]], memberId: 1
+borrowHistory {
+  bookId: 1
+  price: 1000
+}
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
+, memberId: 1
+borrowHistory {
+  bookId: 1
+  price: 1000
+}
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
 </td>
 <td></td>
 <td>0</td>
 <td>com.jash.protokit.merger.ProtoMergerTest@8f2ef19</td></tr>
+<tr>
+<td title='com.jash.protokit.comparer.ProtoComparerTest.testComparer()'><b>testComparer</b><br>Test class: com.jash.protokit.comparer.ProtoComparerTest<br>Parameters: phoneNumbers: "1234567890"
+phoneNumbers: "0987654321"
+, phoneNumbers: "0987654321"
+phoneNumbers: "9876543210"
+, CompareOptions [messageVsKeyField={}, orderRepeatedMsgByField={Member.phoneNumbers=null}, excludeFields=[], redactionFields=[], protoMapper=null],   Member: {
+    phoneNumbers: [
+      phoneNumbers: 1234567890 => 9876543210
+    ]
+  }
+</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.comparer.ProtoComparerTest@3ba987b8</td></tr>
+<tr>
+<td title='com.jash.protokit.comparer.ProtoComparerTest.testComparer()'><b>testComparer</b><br>Test class: com.jash.protokit.comparer.ProtoComparerTest<br>Parameters: borrowHistory {
+  bookId: 2
+  name: "Book name 2"
+  author: "Author name 2"
+  status: BORROWED
+}
+borrowHistory {
+  bookId: 1
+  name: "Book name 1"
+  author: "Author name 1"
+  status: BORROWED
+}
+, borrowHistory {
+  bookId: 1
+  author: "Author name 2"
+  genre: "Genre name 1"
+}
+, CompareOptions [messageVsKeyField={}, orderRepeatedMsgByField={Member.borrowHistory=Book.bookId}, excludeFields=[], redactionFields=[], protoMapper=null],   Member: {
+    borrowHistory: [
+      borrowHistory: {
+-       name: Book name 1
+        author: Author name 1 => Author name 2
++       genre: Genre name 1
+-       status: BORROWED
+      }
+-     borrowHistory: {
+-       bookId: 2
+-       name: Book name 2
+-       author: Author name 2
+-       status: BORROWED
+-     }
+    ]
+  }
+</td>
+<td></td>
+<td>0</td>
+<td>com.jash.protokit.comparer.ProtoComparerTest@3ba987b8</td></tr>
 </table><p>
 </body>
 </html>

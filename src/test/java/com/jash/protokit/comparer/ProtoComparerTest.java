@@ -23,6 +23,7 @@ import com.jash.protokit.LibraryManagement.Address;
 import com.jash.protokit.LibraryManagement.Book;
 import com.jash.protokit.LibraryManagement.BookStatus;
 import com.jash.protokit.LibraryManagement.Member;
+import com.jash.protokit.comparer.ProtoMapper.MapperFunction;
 
 public class ProtoComparerTest {
 
@@ -178,6 +179,47 @@ public class ProtoComparerTest {
 		return data;
 	}
 
+	private Object[] getProtoMapperCase1() {
+		String caseName = "protoMapperCase1";
+		Object[] data = new Object[4];
+		Book book1 = Book.newBuilder().setBookId(1).setName("Book name 1").setAuthor("Author name 1").build();
+		Book book2 = Book.newBuilder().setBookId(1).setGenre("Genre name 1").setAuthor("Author name 2").build();
+		Member message1 = Member.newBuilder().addBorrowHistory(book1).build();
+		Member message2 = Member.newBuilder().addBorrowHistory(book2).build();
+		MapperFunction authorMapper = (value, firstObj) -> {
+			String strValue = (String) value;
+			return strValue.split(" ")[0] + (firstObj ? " First" : " Second");
+		};
+		ProtoMapper mapper = ProtoMapper.Builder.newBuilder().setMapper("Book.author", authorMapper).build();
+		CompareOptions options = CompareOptions.Builder.newBuilder().setProtoMapper(mapper).build();
+		data[0] = message1;
+		data[1] = message2;
+		data[2] = options;
+		data[3] = expectedReportMap.get(caseName);
+		return data;
+	}
+
+	private Object[] getProtoMapperCase2() {
+		String caseName = "protoMapperCase2";
+		Object[] data = new Object[4];
+		Book book1 = Book.newBuilder().setBookId(1).setName("Book name 1").setAuthor("Author name 1").build();
+		Book book2 = Book.newBuilder().setBookId(1).setGenre("Genre name 1").setAuthor("Author name 2").build();
+		Member message1 = Member.newBuilder().addBorrowHistory(book1).build();
+		Member message2 = Member.newBuilder().addBorrowHistory(book2).build();
+		MapperFunction authorMapper = (value, firstObj) -> {
+			String strValue = (String) value;
+			return strValue.split(" ")[0];
+		};
+		ProtoMapper mapper = ProtoMapper.Builder.newBuilder().setMapper("Book.author", authorMapper)
+				.setUseMappedValue(true).build();
+		CompareOptions options = CompareOptions.Builder.newBuilder().setProtoMapper(mapper).build();
+		data[0] = message1;
+		data[1] = message2;
+		data[2] = options;
+		data[3] = expectedReportMap.get(caseName);
+		return data;
+	}
+
 	@DataProvider(name = "dataProvider")
 	public Object[][] dataProvider() {
 		List<Object[]> data = new ArrayList<>();
@@ -189,6 +231,8 @@ public class ProtoComparerTest {
 		data.add(getComparedRepeatedMsgWithKeyFieldCase());
 		data.add(getExcludeFieldCase());
 		data.add(getRedactFieldCase());
+		data.add(getProtoMapperCase1());
+		data.add(getProtoMapperCase2());
 		return data.toArray(new Object[data.size()][]);
 	}
 

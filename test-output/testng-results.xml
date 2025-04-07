@@ -1,17 +1,836 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+<testng-results ignored="0" total="27" passed="27" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-06T22:46:46 IST" name="Default suite" finished-at="2025-04-06T22:46:47 IST" duration-ms="450">
+  <suite started-at="2025-04-07T23:47:22 IST" name="protokit" finished-at="2025-04-07T23:47:23 IST" duration-ms="685">
     <groups>
     </groups>
-    <test started-at="2025-04-06T22:46:46 IST" name="Default test" finished-at="2025-04-06T22:46:47 IST" duration-ms="450">
+    <test started-at="2025-04-07T23:47:22 IST" name="merger" finished-at="2025-04-07T23:47:23 IST" duration-ms="685">
+      <class name="com.jash.protokit.simplifier.ProtoSimplifierTest">
+        <test-method signature="testSimplifier(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.simplifier.SimplifyOptions)[pri:0, instance:com.jash.protokit.simplifier.ProtoSimplifierTest@f0c8a99]" started-at="2025-04-07T23:47:22 IST" name="testSimplifier" data-provider="dataProvider" finished-at="2025-04-07T23:47:22 IST" duration-ms="93" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[street: "Street name"
+city: "City name"
+state: "State name"
+postal_code: "Postal code"
+country: "Country name"
+]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[street: "Street name"
+city: "City name"
+state: "State name"
+]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[SimplifyOptions [dropFields=[Address.postal_code, Address.country]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSimplifier -->
+        <test-method signature="testSimplifier(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.simplifier.SimplifyOptions)[pri:0, instance:com.jash.protokit.simplifier.ProtoSimplifierTest@f0c8a99]" started-at="2025-04-07T23:47:22 IST" name="testSimplifier" data-provider="dataProvider" finished-at="2025-04-07T23:47:22 IST" duration-ms="7" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[street: "Street name"
+city: "City name"
+state: "State name"
+postal_code: "Postal code"
+5: "Country name"
+]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[street: "Street name"
+city: "City name"
+state: "State name"
+postal_code: "Postal code"
+]]>
+              </value>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSimplifier -->
+        <test-method signature="testSimplifier(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.simplifier.SimplifyOptions)[pri:0, instance:com.jash.protokit.simplifier.ProtoSimplifierTest@f0c8a99]" started-at="2025-04-07T23:47:22 IST" name="testSimplifier" data-provider="dataProvider" finished-at="2025-04-07T23:47:22 IST" duration-ms="6" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[name: "Book name"
+author: "Author name"
+genre: "Genre name"
+]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[name: "Book name"
+author: "Author name"
+genre: "Genre name"
+]]>
+              </value>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSimplifier -->
+      </class> <!-- com.jash.protokit.simplifier.ProtoSimplifierTest -->
+      <class name="com.jash.protokit.merger.ProtoMergerTest">
+        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@8f2ef19]" started-at="2025-04-07T23:47:22 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-07T23:47:22 IST" duration-ms="26" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[bookId: 1
+status: BORROWED
+]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[name: "Book name"
+author: "Author name"
+genre: "Genre name"
+]]>
+              </value>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[bookId: 1
+name: "Book name"
+author: "Author name"
+genre: "Genre name"
+status: BORROWED
+]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[bookId: 1
+name: "Book name"
+author: "Author name"
+genre: "Genre name"
+status: BORROWED
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMerger -->
+        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@8f2ef19]" started-at="2025-04-07T23:47:22 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-07T23:47:22 IST" duration-ms="16" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[memberId: 1
+booksOnHold: 5
+]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[memberId: 1
+booksOnHold: 10
+]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[MergeOptions [conflictResolver={Member.booksOnHold=GREATER}, mergeRepeatedByField={}, excludeFields=[]]]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[memberId: 1
+booksOnHold: 10
+]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[memberId: 1
+booksOnHold: 10
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMerger -->
+        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@8f2ef19]" started-at="2025-04-07T23:47:22 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-07T23:47:22 IST" duration-ms="6" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[memberId: 1
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
+borrowHistory {
+  bookId: 1
+  price: 1500
+}
+]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[memberId: 1
+borrowHistory {
+  bookId: 1
+  price: 1000
+}
+]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[MergeOptions [conflictResolver={Book.price=GREATER}, mergeRepeatedByField={Member.borrowHistory=Book.bookId}, excludeFields=[]]]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[memberId: 1
+borrowHistory {
+  bookId: 1
+  price: 1500
+}
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
+]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[memberId: 1
+borrowHistory {
+  bookId: 1
+  price: 1500
+}
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMerger -->
+        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@8f2ef19]" started-at="2025-04-07T23:47:22 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-07T23:47:22 IST" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[memberId: 1
+booksOnHold: 5
+]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[memberId: 1
+booksOnHold: 10
+]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[MergeOptions [conflictResolver={Member.booksOnHold=LESSER}, mergeRepeatedByField={}, excludeFields=[]]]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[memberId: 1
+booksOnHold: 5
+]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[memberId: 1
+booksOnHold: 5
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMerger -->
+        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@8f2ef19]" started-at="2025-04-07T23:47:22 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-07T23:47:22 IST" duration-ms="39" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[memberId: 1
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
+borrowHistory {
+  bookId: 1
+  price: 1500
+}
+]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[memberId: 1
+borrowHistory {
+  bookId: 1
+  price: 1000
+}
+]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[MergeOptions [conflictResolver={Book.price=LESSER}, mergeRepeatedByField={Member.borrowHistory=Book.bookId}, excludeFields=[]]]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[memberId: 1
+borrowHistory {
+  bookId: 1
+  price: 1000
+}
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
+]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[memberId: 1
+borrowHistory {
+  bookId: 1
+  price: 1000
+}
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMerger -->
+        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@8f2ef19]" started-at="2025-04-07T23:47:22 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-07T23:47:22 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[memberId: 1
+booksOnHold: 5
+]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[memberId: 1
+booksOnHold: 10
+]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[MergeOptions [conflictResolver={Member.booksOnHold=FIRST}, mergeRepeatedByField={}, excludeFields=[]]]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[memberId: 1
+booksOnHold: 5
+]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[memberId: 1
+booksOnHold: 5
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMerger -->
+        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@8f2ef19]" started-at="2025-04-07T23:47:22 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-07T23:47:22 IST" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[memberId: 1
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
+borrowHistory {
+  bookId: 1
+  price: 1500
+}
+]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[memberId: 1
+borrowHistory {
+  bookId: 1
+  price: 1000
+}
+]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[MergeOptions [conflictResolver={Book.price=FIRST}, mergeRepeatedByField={Member.borrowHistory=Book.bookId}, excludeFields=[]]]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[memberId: 1
+borrowHistory {
+  bookId: 1
+  price: 1500
+}
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
+]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[memberId: 1
+borrowHistory {
+  bookId: 1
+  price: 1500
+}
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMerger -->
+        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@8f2ef19]" started-at="2025-04-07T23:47:22 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-07T23:47:22 IST" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[memberId: 1
+booksOnHold: 5
+]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[memberId: 1
+booksOnHold: 10
+]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[MergeOptions [conflictResolver={Member.booksOnHold=SECOND}, mergeRepeatedByField={}, excludeFields=[]]]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[memberId: 1
+booksOnHold: 10
+]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[memberId: 1
+booksOnHold: 10
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMerger -->
+        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@8f2ef19]" started-at="2025-04-07T23:47:22 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-07T23:47:22 IST" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[memberId: 1
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
+borrowHistory {
+  bookId: 1
+  price: 1500
+}
+]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[memberId: 1
+borrowHistory {
+  bookId: 1
+  price: 1000
+}
+]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[MergeOptions [conflictResolver={Book.price=SECOND}, mergeRepeatedByField={Member.borrowHistory=Book.bookId}, excludeFields=[]]]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[memberId: 1
+borrowHistory {
+  bookId: 1
+  price: 1000
+}
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
+]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[memberId: 1
+borrowHistory {
+  bookId: 1
+  price: 1000
+}
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMerger -->
+        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@8f2ef19]" started-at="2025-04-07T23:47:22 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-07T23:47:22 IST" duration-ms="11" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[memberId: 1
+booksOnHold: 5
+]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[memberId: 1
+booksOnHold: 10
+]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[MergeOptions [conflictResolver={Member.booksOnHold=DEFAULT}, mergeRepeatedByField={}, excludeFields=[]]]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[memberId: 1
+]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[memberId: 1
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMerger -->
+        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@8f2ef19]" started-at="2025-04-07T23:47:22 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-07T23:47:23 IST" duration-ms="7" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[memberId: 1
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
+borrowHistory {
+  bookId: 1
+  price: 1500
+}
+]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[memberId: 1
+borrowHistory {
+  bookId: 1
+  price: 1000
+}
+]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[MergeOptions [conflictResolver={Book.price=DEFAULT}, mergeRepeatedByField={Member.borrowHistory=Book.bookId}, excludeFields=[]]]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[memberId: 1
+borrowHistory {
+  bookId: 1
+}
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
+]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[memberId: 1
+borrowHistory {
+  bookId: 1
+}
+borrowHistory {
+  bookId: 2
+  price: 2000
+}
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMerger -->
+        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@8f2ef19]" started-at="2025-04-07T23:47:23 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-07T23:47:23 IST" duration-ms="6" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[street: "Street name"
+state: "State name"
+postal_code: "Postal code"
+]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[city: "City name"
+country: "Country name"
+]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[MergeOptions [conflictResolver={}, mergeRepeatedByField={}, excludeFields=[Address.country]]]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[street: "Street name"
+city: "City name"
+state: "State name"
+postal_code: "Postal code"
+]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[street: "Street name"
+city: "City name"
+state: "State name"
+postal_code: "Postal code"
+country: "Country name"
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMerger -->
+        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@8f2ef19]" started-at="2025-04-07T23:47:23 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-07T23:47:23 IST" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[phoneNumbers: "1234567890"
+phoneNumbers: "0987654321"
+]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[phoneNumbers: "0987654321"
+phoneNumbers: "9876543210"
+phoneNumbers: "8765432109"
+]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[MergeOptions [conflictResolver={}, mergeRepeatedByField={Member.phoneNumbers=null}, excludeFields=[]]]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[phoneNumbers: "1234567890"
+phoneNumbers: "0987654321"
+phoneNumbers: "9876543210"
+phoneNumbers: "8765432109"
+]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[phoneNumbers: "0987654321"
+phoneNumbers: "9876543210"
+phoneNumbers: "8765432109"
+phoneNumbers: "1234567890"
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMerger -->
+        <test-method signature="testMerger(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.merger.MergeOptions,com.google.protobuf.Message,com.google.protobuf.Message)[pri:0, instance:com.jash.protokit.merger.ProtoMergerTest@8f2ef19]" started-at="2025-04-07T23:47:23 IST" name="testMerger" data-provider="dataProvider" finished-at="2025-04-07T23:47:23 IST" duration-ms="8" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[borrowHistory {
+  bookId: 2
+  name: "Book name 2"
+  author: "Author name 2"
+  genre: "Genre name 2"
+}
+borrowHistory {
+  bookId: 1
+  name: "Book name"
+  author: "Author name"
+}
+]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[borrowHistory {
+  bookId: 1
+  genre: "Genre name"
+  status: BORROWED
+}
+borrowHistory {
+  bookId: 3
+  name: "Book name 3"
+  author: "Author name 3"
+  genre: "Genre name 3"
+  status: BORROWED
+}
+]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[MergeOptions [conflictResolver={}, mergeRepeatedByField={Member.borrowHistory=Book.bookId}, excludeFields=[]]]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[borrowHistory {
+  bookId: 1
+  name: "Book name"
+  author: "Author name"
+  genre: "Genre name"
+  status: BORROWED
+}
+borrowHistory {
+  bookId: 2
+  name: "Book name 2"
+  author: "Author name 2"
+  genre: "Genre name 2"
+}
+borrowHistory {
+  bookId: 3
+  name: "Book name 3"
+  author: "Author name 3"
+  genre: "Genre name 3"
+  status: BORROWED
+}
+]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[borrowHistory {
+  bookId: 1
+  name: "Book name"
+  author: "Author name"
+  genre: "Genre name"
+  status: BORROWED
+}
+borrowHistory {
+  bookId: 2
+  name: "Book name 2"
+  author: "Author name 2"
+  genre: "Genre name 2"
+}
+borrowHistory {
+  bookId: 3
+  name: "Book name 3"
+  author: "Author name 3"
+  genre: "Genre name 3"
+  status: BORROWED
+}
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMerger -->
+      </class> <!-- com.jash.protokit.merger.ProtoMergerTest -->
       <class name="com.jash.protokit.comparer.ProtoComparerTest">
-        <test-method is-config="true" signature="getExpectedReports()[pri:0, instance:com.jash.protokit.comparer.ProtoComparerTest@4a83a74a]" started-at="2025-04-06T22:46:46 IST" name="getExpectedReports" finished-at="2025-04-06T22:46:46 IST" duration-ms="29" status="PASS">
+        <test-method is-config="true" signature="getExpectedReports()[pri:0, instance:com.jash.protokit.comparer.ProtoComparerTest@3ba987b8]" started-at="2025-04-07T23:47:23 IST" name="getExpectedReports" finished-at="2025-04-07T23:47:23 IST" duration-ms="60" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getExpectedReports -->
-        <test-method signature="testComparer(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.comparer.CompareOptions,java.lang.String)[pri:0, instance:com.jash.protokit.comparer.ProtoComparerTest@4a83a74a]" started-at="2025-04-06T22:46:46 IST" name="testComparer" data-provider="dataProvider" finished-at="2025-04-06T22:46:46 IST" duration-ms="144" status="PASS">
+        <test-method signature="testComparer(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.comparer.CompareOptions,java.lang.String)[pri:0, instance:com.jash.protokit.comparer.ProtoComparerTest@3ba987b8]" started-at="2025-04-07T23:47:23 IST" name="testComparer" data-provider="dataProvider" finished-at="2025-04-07T23:47:23 IST" duration-ms="9" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -48,7 +867,7 @@ postal_code: "Postal code"
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testComparer -->
-        <test-method signature="testComparer(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.comparer.CompareOptions,java.lang.String)[pri:0, instance:com.jash.protokit.comparer.ProtoComparerTest@4a83a74a]" started-at="2025-04-06T22:46:46 IST" name="testComparer" data-provider="dataProvider" finished-at="2025-04-06T22:46:46 IST" duration-ms="9" status="PASS">
+        <test-method signature="testComparer(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.comparer.CompareOptions,java.lang.String)[pri:0, instance:com.jash.protokit.comparer.ProtoComparerTest@3ba987b8]" started-at="2025-04-07T23:47:23 IST" name="testComparer" data-provider="dataProvider" finished-at="2025-04-07T23:47:23 IST" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -89,7 +908,7 @@ postal_code: "Postal code"
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testComparer -->
-        <test-method signature="testComparer(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.comparer.CompareOptions,java.lang.String)[pri:0, instance:com.jash.protokit.comparer.ProtoComparerTest@4a83a74a]" started-at="2025-04-06T22:46:46 IST" name="testComparer" data-provider="dataProvider" finished-at="2025-04-06T22:46:46 IST" duration-ms="17" status="PASS">
+        <test-method signature="testComparer(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.comparer.CompareOptions,java.lang.String)[pri:0, instance:com.jash.protokit.comparer.ProtoComparerTest@3ba987b8]" started-at="2025-04-07T23:47:23 IST" name="testComparer" data-provider="dataProvider" finished-at="2025-04-07T23:47:23 IST" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -123,7 +942,7 @@ phoneNumbers: "9876543210"
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testComparer -->
-        <test-method signature="testComparer(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.comparer.CompareOptions,java.lang.String)[pri:0, instance:com.jash.protokit.comparer.ProtoComparerTest@4a83a74a]" started-at="2025-04-06T22:46:46 IST" name="testComparer" data-provider="dataProvider" finished-at="2025-04-06T22:46:46 IST" duration-ms="3" status="PASS">
+        <test-method signature="testComparer(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.comparer.CompareOptions,java.lang.String)[pri:0, instance:com.jash.protokit.comparer.ProtoComparerTest@3ba987b8]" started-at="2025-04-07T23:47:23 IST" name="testComparer" data-provider="dataProvider" finished-at="2025-04-07T23:47:23 IST" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -158,7 +977,7 @@ phoneNumbers: "9876543210"
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testComparer -->
-        <test-method signature="testComparer(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.comparer.CompareOptions,java.lang.String)[pri:0, instance:com.jash.protokit.comparer.ProtoComparerTest@4a83a74a]" started-at="2025-04-06T22:46:46 IST" name="testComparer" data-provider="dataProvider" finished-at="2025-04-06T22:46:46 IST" duration-ms="26" status="PASS">
+        <test-method signature="testComparer(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.comparer.CompareOptions,java.lang.String)[pri:0, instance:com.jash.protokit.comparer.ProtoComparerTest@3ba987b8]" started-at="2025-04-07T23:47:23 IST" name="testComparer" data-provider="dataProvider" finished-at="2025-04-07T23:47:23 IST" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -217,7 +1036,7 @@ borrowHistory {
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testComparer -->
-        <test-method signature="testComparer(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.comparer.CompareOptions,java.lang.String)[pri:0, instance:com.jash.protokit.comparer.ProtoComparerTest@4a83a74a]" started-at="2025-04-06T22:46:46 IST" name="testComparer" data-provider="dataProvider" finished-at="2025-04-06T22:46:46 IST" duration-ms="5" status="PASS">
+        <test-method signature="testComparer(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.comparer.CompareOptions,java.lang.String)[pri:0, instance:com.jash.protokit.comparer.ProtoComparerTest@3ba987b8]" started-at="2025-04-07T23:47:23 IST" name="testComparer" data-provider="dataProvider" finished-at="2025-04-07T23:47:23 IST" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -276,7 +1095,7 @@ borrowHistory {
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testComparer -->
-        <test-method signature="testComparer(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.comparer.CompareOptions,java.lang.String)[pri:0, instance:com.jash.protokit.comparer.ProtoComparerTest@4a83a74a]" started-at="2025-04-06T22:46:46 IST" name="testComparer" data-provider="dataProvider" finished-at="2025-04-06T22:46:46 IST" duration-ms="3" status="PASS">
+        <test-method signature="testComparer(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.comparer.CompareOptions,java.lang.String)[pri:0, instance:com.jash.protokit.comparer.ProtoComparerTest@3ba987b8]" started-at="2025-04-07T23:47:23 IST" name="testComparer" data-provider="dataProvider" finished-at="2025-04-07T23:47:23 IST" duration-ms="5" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -314,7 +1133,7 @@ genre: "Genre name 1"
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testComparer -->
-        <test-method signature="testComparer(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.comparer.CompareOptions,java.lang.String)[pri:0, instance:com.jash.protokit.comparer.ProtoComparerTest@4a83a74a]" started-at="2025-04-06T22:46:47 IST" name="testComparer" data-provider="dataProvider" finished-at="2025-04-06T22:46:47 IST" duration-ms="4" status="PASS">
+        <test-method signature="testComparer(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.comparer.CompareOptions,java.lang.String)[pri:0, instance:com.jash.protokit.comparer.ProtoComparerTest@3ba987b8]" started-at="2025-04-07T23:47:23 IST" name="testComparer" data-provider="dataProvider" finished-at="2025-04-07T23:47:23 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -352,7 +1171,96 @@ genre: "Genre name 1"
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testComparer -->
+        <test-method signature="testComparer(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.comparer.CompareOptions,java.lang.String)[pri:0, instance:com.jash.protokit.comparer.ProtoComparerTest@3ba987b8]" started-at="2025-04-07T23:47:23 IST" name="testComparer" data-provider="dataProvider" finished-at="2025-04-07T23:47:23 IST" duration-ms="4" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[borrowHistory {
+  bookId: 1
+  name: "Book name 1"
+  author: "Author name 1"
+}
+]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[borrowHistory {
+  bookId: 1
+  author: "Author name 2"
+  genre: "Genre name 1"
+}
+]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[CompareOptions [messageVsKeyField={}, orderRepeatedMsgByField={}, excludeFields=[], redactionFields=[], protoMapper=ProtoMapper [fieldVsMapper fields=[Book.author], useMappedValue=false]]]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[  Member: {
+    borrowHistory: [
+      borrowHistory: {
+-       name: Book name 1
+        author: Author name 1 (Author First) => Author name 2 (Author Second)
++       genre: Genre name 1
+      }
+    ]
+  }
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testComparer -->
+        <test-method signature="testComparer(com.google.protobuf.Message,com.google.protobuf.Message,com.jash.protokit.comparer.CompareOptions,java.lang.String)[pri:0, instance:com.jash.protokit.comparer.ProtoComparerTest@3ba987b8]" started-at="2025-04-07T23:47:23 IST" name="testComparer" data-provider="dataProvider" finished-at="2025-04-07T23:47:23 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[borrowHistory {
+  bookId: 1
+  name: "Book name 1"
+  author: "Author name 1"
+}
+]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[borrowHistory {
+  bookId: 1
+  author: "Author name 2"
+  genre: "Genre name 1"
+}
+]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[CompareOptions [messageVsKeyField={}, orderRepeatedMsgByField={}, excludeFields=[], redactionFields=[], protoMapper=ProtoMapper [fieldVsMapper fields=[Book.author], useMappedValue=true]]]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[  Member: {
+    borrowHistory: [
+      borrowHistory: {
+-       name: Book name 1
++       genre: Genre name 1
+      }
+    ]
+  }
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testComparer -->
       </class> <!-- com.jash.protokit.comparer.ProtoComparerTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- merger -->
+  </suite> <!-- protokit -->
 </testng-results>

@@ -85,7 +85,9 @@ public class ProtoMerger {
 
 	private static void mergeRepeatedField(FieldDescriptor field, Builder alphaBuilder, Builder betaBuilder,
 			Object alphaValue, Object betaValue, MergeOptions options) {
+		@SuppressWarnings("unchecked")
 		List<Object> l1 = new ArrayList<>(alphaValue != null ? (List<Object>) alphaValue : Collections.emptyList());
+		@SuppressWarnings("unchecked")
 		List<Object> l2 = new ArrayList<>(betaValue != null ? (List<Object>) betaValue : Collections.emptyList());
 		if (l1.isEmpty()) {
 			alphaBuilder.setField(field, betaValue);
