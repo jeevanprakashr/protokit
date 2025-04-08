@@ -22,6 +22,17 @@ public class ProtoSimplifier {
 	 * per the options.
 	 * 
 	 * @param message - The message to simplify.
+	 * @return The simplified message.
+	 */
+	public static <E extends Message> E simplifyMessage(E message) {
+		return simplifyMessage(message, null);
+	}
+
+	/**
+	 * Simplify a message by removing default values, unknown fields, and fields as
+	 * per the options.
+	 * 
+	 * @param message - The message to simplify.
 	 * @param options - The options to simplify the message.
 	 * @return The simplified message.
 	 */

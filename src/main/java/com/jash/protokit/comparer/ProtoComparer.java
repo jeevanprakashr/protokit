@@ -41,6 +41,18 @@ public class ProtoComparer {
 	 * @param m2 - The second message.
 	 * @return The differences between the two messages.
 	 */
+	public static String compare(Message m1, Message m2) {
+		return compare(m1, m2, null);
+	}
+
+	/**
+	 * Compare two messages and return the differences.
+	 * 
+	 * @param m1      - The first message.
+	 * @param m2      - The second message.
+	 * @param options - Compare options to use for comparison.
+	 * @return The differences between the two messages.
+	 */
 	public static String compare(Message m1, Message m2, CompareOptions options) {
 		if (Objects.equals(m1, m2)) {
 			// No diff

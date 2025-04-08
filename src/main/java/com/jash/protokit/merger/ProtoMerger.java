@@ -28,6 +28,18 @@ public class ProtoMerger {
 	 * @param beta  - beta message to merge into from alpha message.
 	 * @return A {@link Result} object containing the merged messages.
 	 */
+	public static <T extends Message> Result<T> merge(T alpha, T beta) {
+		return merge(alpha, beta, null);
+	}
+
+	/**
+	 * Merge the alpha and beta messages into each other.
+	 * 
+	 * @param alpha   - alpha message to merge into from beta message.
+	 * @param beta    - beta message to merge into from alpha message.
+	 * @param options - merge options to use for merging.
+	 * @return A {@link Result} object containing the merged messages.
+	 */
 	public static <T extends Message> Result<T> merge(T alpha, T beta, MergeOptions options) {
 		Builder alphaBuilder = alpha.toBuilder();
 		Builder betaBuilder = beta.toBuilder();
@@ -44,6 +56,19 @@ public class ProtoMerger {
 	 * 
 	 * @param alphaBuilder - alpha builder to merge into from beta builder.
 	 * @param betaBuilder  - beta builder to merge into from alpha builder.
+	 * 
+	 * @throws IllegalArgumentException if the builders are of different types.
+	 */
+	public static void merge(Builder alphaBuilder, Builder betaBuilder) {
+		merge(alphaBuilder, betaBuilder, null);
+	}
+
+	/**
+	 * Merge the alpha and beta builders into each other inplace.
+	 * 
+	 * @param alphaBuilder - alpha builder to merge into from beta builder.
+	 * @param betaBuilder  - beta builder to merge into from alpha builder.
+	 * @param options      - merge options to use for merging.
 	 * 
 	 * @throws IllegalArgumentException if the builders are of different types.
 	 */
